@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Assistant Enfance Amiens Overlay V2",
+  "description": "Assistant RAG + modèle cloud pour la rubrique enfance du site amiens.fr.",
+  "version": "0.2.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amiens.fr/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/corpus_segments.json",
+        "data/lexique_enfance.json"
+      ],
+      "matches": [
+        "https://www.amiens.fr/*"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "http://localhost:8711/*",
+    "https://localhost:8711/*"
+  ]
+}
+

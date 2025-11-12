@@ -1,0 +1,8 @@
+
+URL: https://www.amiens.fr/Vivre-a-Amiens/Enfance/Centres-de-loisirs
+
+Tables: ['Début des inscriptions\xa0le mardi 22 avril 2025\nFin des\xa0inscriptions\xa0le samedi 14 juin 2025\n\nRéouverture des inscriptions le lundi 07 juillet 2025.\n\n\xa0\n\nSECTEUR CENTRE\xa0: 03 22 97 43 32\n\nAccueil de l’Hôtel de Ville\n\nDu lundi au vendredi de 8h30 à 17h30\n\nLe samedi de 8h30 à 12h\n\n\xa0\n\nSECTEUR OUEST\xa0: 03 22 97 43 00\n\nAccueil mairie de secteur\xa0: 3 avenue du Pays d’Auge\n\nDu lundi au vendredi de 8h45 à 12h30 et de 13h30 à 17h45\n\nLe samedi de 9h à 12h\n\n(sauf pendant les vacances scolaires)', 'SECTEUR NORD\xa0:\xa003 22 66 10 20\n\nAccueil mairie\xa0de secteur : L’Atrium – 39 avenue de la Paix\n\nDu lundi au vendredi de 8h30 à 12h30 et de 13h30 à 17h30\n\nLe samedi de 9h à 12h\n\n(sauf pendant les vacances scolaires d’été)', 'SECTEUR SUD\xa0:\xa003 22 50 32 60\n\nAccueil mairie\xa0: Centre commercial Pierre Rollin – rue du 8 mai 1945\n\nDu lundi au vendredi de 8h45 à 12h30 et de 13h30 à 17h45\n\nLe samedi de 9h à 12h\n\n(sauf pendant les vacances scolaires)', 'SECTEUR EST\xa0:\xa003 22 50 47 65\n\nAccueil mairie\xa0: 166 chaussée Jules Ferry\n\nDu lundi au vendredi de 8h45 à 12h30 et de 13h30 à 17h45\n\nLe samedi de 9h à 12h\n\n(sauf pendant les vacances scolaires)']
+Display:none: []
+Aria-hidden: ['Ecoutez']
+Voir+: []
+PDFs: []

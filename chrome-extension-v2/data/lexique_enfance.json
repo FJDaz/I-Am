@@ -1,0 +1,326 @@
+{
+  "lexique_enfance": [
+    {
+      "terme_usager": "tarifs",
+      "terme_admin": [
+        "Les tarifs – accueil pré et/ou post scolaire",
+        "grille tarifaire",
+        "frais d’inscription",
+        "Synthese-tarif-2024-2025",
+        "tarifs centre de loisirs"
+      ],
+      "poids": 1.0
+    },
+    {
+      "terme_usager": "prix",
+      "terme_admin": [
+        "montant à facturer",
+        "coût unitaire",
+        "participation financière"
+      ],
+      "poids": 1.0
+    },
+    {
+      "terme_usager": "accueil du mercredi",
+      "terme_admin": [
+        "Accueil du mercredi"
+      ],
+      "poids": 1.0
+    },
+    {
+      "terme_usager": "avant l'école",
+      "terme_admin": [
+        "Avant / Après l’école",
+        "accueil périscolaire matin"
+      ],
+      "poids": 1.0
+    },
+    {
+      "terme_usager": "après l'école",
+      "terme_admin": [
+        "Avant / Après l’école",
+        "accueil périscolaire soir"
+      ],
+      "poids": 1.0
+    },
+    {
+      "terme_usager": "faire garder son enfant",
+      "terme_admin": [
+        "Faire garder son enfant",
+        "mode d’accueil régulier",
+        "mode d’accueil occasionnel",
+        "mode d’accueil d’urgence"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "crèche",
+      "terme_admin": [
+        "Les crèches amiénoises",
+        "relais petite enfance",
+        "RPE"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "centre de loisirs",
+      "terme_admin": [
+        "Centres de loisirs",
+        "accueil de loisirs maternels et primaires",
+        "Synthese-tarif-2024-2025"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "inscription",
+      "terme_admin": [
+        "pré‑inscription",
+        "dossier d’inscription",
+        "inscriptions accueil périscolaire",
+        "inscription scolaire",
+        "inscriptions scolaires",
+        "pièces justificatives",
+        "mairie de secteur"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "inscrire",
+      "terme_admin": [
+        "s’inscrire",
+        "inscription scolaire",
+        "inscriptions scolaires",
+        "pièces justificatives",
+        "mairie de secteur"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "s inscrire",
+      "terme_admin": [
+        "inscription scolaire",
+        "inscriptions scolaires",
+        "pièces justificatives",
+        "mairie de secteur"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "inscription scolaire",
+      "terme_admin": [
+        "inscriptions scolaires",
+        "inscription scolaire",
+        "pièces justificatives",
+        "mairie de secteur"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "adresse",
+      "terme_admin": [
+        "lieu d’accueil",
+        "structure",
+        "site d’accueil"
+      ],
+      "poids": 0.8
+    },
+    {
+      "terme_usager": "contact",
+      "terme_admin": [
+        "téléphone",
+        "courriel",
+        "adresse email officielle",
+        "standard"
+      ],
+      "poids": 1.0
+    },
+    {
+      "terme_usager": "quota",
+      "terme_admin": [
+        "capacité maximale",
+        "nombre de places disponibles",
+        "effectif autorisé"
+      ],
+      "poids": 0.8
+    },
+    {
+      "terme_usager": "nombre de places",
+      "terme_admin": [
+        "capacité d’accueil",
+        "effectif autorisé"
+      ],
+      "poids": 0.8
+    },
+    {
+      "terme_usager": "activité",
+      "terme_admin": [
+        "atelier pédagogique",
+        "activité ludo‑éducative",
+        "activité d’éveil"
+      ],
+      "poids": 0.7
+    },
+    {
+      "terme_usager": "jeux",
+      "terme_admin": [
+        "activités ludiques",
+        "atelier jeu"
+      ],
+      "poids": 0.6
+    },
+    {
+      "terme_usager": "animaux",
+      "terme_admin": [
+        "atelier jardinage",
+        "exploration nature",
+        "éveil sensoriel"
+      ],
+      "poids": 0.5
+    },
+    {
+      "terme_usager": "horaires",
+      "terme_admin": [
+        "heure d’ouverture",
+        "heure de fermeture",
+        "plage horaire",
+        "planning d’ouverture"
+      ],
+      "poids": 0.8
+    },
+    {
+      "terme_usager": "horaires centre",
+      "terme_admin": [
+        "horaires du centre de loisirs",
+        "créneaux d’accueil",
+        "planning centre de loisirs"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "documents",
+      "terme_admin": [
+        "dossier administratif",
+        "formulaire d’inscription",
+        "fiche de pré‑inscription"
+      ],
+      "poids": 0.8
+    },
+    {
+      "terme_usager": "justificatif",
+      "terme_admin": [
+        "pièce justificative",
+        "document officiel requis"
+      ],
+      "poids": 0.8
+    },
+    {
+      "terme_usager": "démarches",
+      "terme_admin": [
+        "procédure en ligne",
+        "étapes d’inscription",
+        "modalités"
+      ],
+      "poids": 0.8
+    },
+    {
+      "terme_usager": "vacances",
+      "terme_admin": [
+        "période de fermeture",
+        "petites‑vacances",
+        "vacances scolaires"
+      ],
+      "poids": 0.7
+    },
+    {
+      "terme_usager": "garderie",
+      "terme_admin": [
+        "accueil périscolaire",
+        "service de garde",
+        "accueil après école"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "périscolaire",
+      "terme_admin": [
+        "accueil périscolaire",
+        "service avant/après école"
+      ],
+      "poids": 1.0
+    },
+    {
+      "terme_usager": "urgence",
+      "terme_admin": [
+        "accueil d’urgence",
+        "service exceptionnel",
+        "mode d’accueil d’urgence"
+      ],
+      "poids": 0.7
+    },
+    {
+      "terme_usager": "transport",
+      "terme_admin": [
+        "transport scolaire",
+        "navette scolaire",
+        "trajet domicile/structure"
+      ],
+      "poids": 0.6
+    },
+    {
+      "terme_usager": "parking",
+      "terme_admin": [
+        "stationnement visiteurs",
+        "parking structure",
+        "accès voiture"
+      ],
+      "poids": 0.5
+    },
+    {
+      "terme_usager": "repas",
+      "terme_admin": [
+        "restauration scolaire",
+        "menu cantine",
+        "cantine scolaire"
+      ],
+      "poids": 0.9
+    },
+    {
+      "terme_usager": "menu",
+      "terme_admin": [
+        "Les menus",
+        "pause méridienne",
+        "cantine",
+        "restauration scolaire"
+      ],
+      "poids": 0.7
+    },
+    {
+      "terme_usager": "pause déjeuner",
+      "terme_admin": [
+        "pause méridienne",
+        "cantine scolaire"
+      ],
+      "poids": 0.7
+    },
+    {
+      "terme_usager": "secteur",
+      "terme_admin": [
+        "secteur géographique",
+        "zone de compétence",
+        "mairie de secteur"
+      ],
+      "poids": 0.6
+    },
+    {
+      "terme_usager": "liste d’attente",
+      "terme_admin": [
+        "placement en attente",
+        "réservation prioritaire",
+        "liste d’attente crèche"
+      ],
+      "poids": 0.8
+    }
+  ]
+}
+
+

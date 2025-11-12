@@ -1,0 +1,8 @@
+
+URL: https://www.amiens.fr/Vivre-a-Amiens/Enfance/Faire-garder-son-enfant#secondmenu
+
+Tables: ["Pour tout savoir sur l'accueil inclusif de tous les enfants en situation de handicap ou à besoins spécifiques\n>> cliquez ici <<"]
+Display:none: []
+Aria-hidden: ['Ecoutez']
+Voir+: []
+PDFs: ['https://www.amiens.fr/var/ez_website/storage/original/application/69f057639752af695b1c3a8c5d64c0dd.pdf']

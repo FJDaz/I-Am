@@ -1,0 +1,5 @@
+whoosh>=2.7,<3
+pdfminer.six>=20220524
+xlrd>=2.0.1
+sentence-transformers>=2.2.2
+

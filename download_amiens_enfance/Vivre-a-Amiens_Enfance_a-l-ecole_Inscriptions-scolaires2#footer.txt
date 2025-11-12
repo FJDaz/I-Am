@@ -1,0 +1,8 @@
+
+URL: https://www.amiens.fr/Vivre-a-Amiens/Enfance/a-l-ecole/Inscriptions-scolaires2#footer
+
+Tables: []
+Display:none: []
+Aria-hidden: ['Ecoutez']
+Voir+: []
+PDFs: []
