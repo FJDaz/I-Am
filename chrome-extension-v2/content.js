@@ -93,7 +93,7 @@
       flex-shrink: 0;
     }
 
-    #assistant-overlay h1 {
+    #assistant-overlay .assistant-header h1 {
       margin: 0;
       font-size: 1.7rem;
       font-weight: bolder;
@@ -224,7 +224,6 @@
       background: rgba(59, 130, 246, 0.12);
       border: 1px solid rgba(59, 130, 246, 0.25);
       font-size: 0.78rem;
-      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
@@ -357,7 +356,6 @@
       padding: 6px 10px;
       border-radius: 999px;
       font-size: 0.78rem;
-      font-weight: 600;
       text-transform: uppercase;
     }
 
@@ -501,7 +499,6 @@
       padding: 6px 10px;
       border-radius: 999px;
       font-size: 0.78rem;
-      font-weight: 600;
       text-transform: uppercase;
     }
 
