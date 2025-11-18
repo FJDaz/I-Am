@@ -83,6 +83,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
+    }
+
+    #assistant-overlay .assistant-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
     }
 
     #assistant-overlay h1 {
@@ -546,6 +554,7 @@
     </button>
     <aside id="assistant-overlay" role="dialog" aria-modal="true">
       <header class="assistant-header">
+        <img src="${chrome.runtime.getURL('statics/img/IAM_logo.png')}" alt="I Am Logo" class="assistant-logo">
         <h1>Assistant Enfance Amiens</h1>
         <button class="assistant-close" type="button" aria-label="Fermer">✕</button>
       </header>

@@ -19,7 +19,8 @@
       "resources": [
         "data/corpus_segments.json",
         "data/lexique_enfance.json",
-        "data/questions_usager.json"
+        "data/questions_usager.json",
+        "statics/img/IAM_logo.png"
       ],
       "matches": [
         "https://www.amiens.fr/*"
