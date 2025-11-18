@@ -30,6 +30,8 @@ Explications techniques et concepts :
 - **segments-rag.md** : Explication des segments RAG
 - **alignement-rag.md** : Explication du système d'alignement
 - **optimisation-latence.md** : Optimisations de performance
+- **methode-meta-skills.md** : Méthode méta pour créer des skills (structure, principes, workflow)
+- **prompt-generateur-skills.md** : Prompt complet pour générer automatiquement des skills
 - **archive-docs-manager.md** : Skill d'archivage automatique
 - **resume-contexte-manager.md** : Skill de gestion du contexte
 - **fetch-phone-numbers.md** : Stratégies de récupération contacts

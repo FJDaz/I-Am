@@ -4,7 +4,6 @@ anthropic>=0.18.1
 pydantic>=2.5.0
 python-dotenv>=1.0.0
 numpy>=1.24.3
-sentence-transformers>=2.2.2
 whoosh>=2.7,<3
 pdfminer.six>=20220524
 xlrd>=2.0.1

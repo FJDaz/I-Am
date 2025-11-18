@@ -29,9 +29,12 @@ anthropic
 pydantic
 python-dotenv
 numpy
-sentence-transformers
 whoosh
+pdfminer.six
+xlrd
 ```
+
+**Note** : `sentence-transformers` a été retiré pour alléger l'image Docker (de ~5 Go à ~200 Mo). La recherche utilise Whoosh (BM25) uniquement.
 
 ### 2. Créer un Compte Railway (2 min)
 
@@ -48,15 +51,21 @@ whoosh
 
 ### 4. Configurer les Variables d'Environnement (3 min)
 
-Dans Railway → Votre projet → **Variables** :
+**⚠️ IMPORTANT** : Le build réussit mais le déploiement crash sans cette étape !
 
-```
-ANTHROPIC_API_KEY=votre_clé_anthropic
-PORT=8711
-ALLOWED_ORIGIN=https://www.amiens.fr
-```
+Dans Railway → Votre projet → **Variables** (onglet en haut) :
 
-**Note** : Railway définit automatiquement `PORT`, mais on le garde pour compatibilité.
+1. Cliquer sur **"+ New Variable"**
+2. Ajouter :
+   - **Key** : `ANTHROPIC_API_KEY`
+   - **Value** : `sk-ant-...` (ta clé Anthropic)
+3. Cliquer sur **"Add"**
+
+**Variables optionnelles** :
+- `PORT=8711` (Railway définit automatiquement `PORT`, mais on peut le garder)
+- `ALLOWED_ORIGIN=https://www.amiens.fr` (si besoin de restreindre CORS)
+
+**Note** : Après avoir ajouté `ANTHROPIC_API_KEY`, Railway redéploie automatiquement.
 
 ### 5. Obtenir l'URL du Serveur (1 min)
 
@@ -120,9 +129,12 @@ Dans Railway → Votre projet → **Metrics** :
 
 ## 🆘 Troubleshooting
 
-### Le serveur ne démarre pas
+### Le serveur ne démarre pas / "Deploy crashed"
+- **Erreur** : `ANTHROPIC_API_KEY non défini`
+- **Solution** : Ajouter la variable dans Railway → **Variables** → **+ New Variable**
+  - Key: `ANTHROPIC_API_KEY`
+  - Value: `sk-ant-...` (ta clé Anthropic)
 - Vérifier les logs dans Railway → **Deployments** → **View Logs**
-- Vérifier que `ANTHROPIC_API_KEY` est bien défini
 
 ### Erreur CORS dans l'extension
 - Vérifier que `ALLOWED_ORIGIN` contient `https://www.amiens.fr`

@@ -800,14 +800,20 @@ def build_prompt(payload: AssistantRequest) -> str:
 
 def load_embeddings():
   global corpus_embeddings, corpus_metadata, embed_model, whoosh_index, whoosh_dir
-  if SentenceTransformer is None:
-    return
   try:
+    # Charger les embeddings pré-calculés (même sans sentence-transformers)
     corpus_embeddings = np.load(EMBEDDINGS_PATH)
     with METADATA_PATH.open(encoding="utf-8") as f:
       corpus_metadata = json.load(f)
-    embed_model = SentenceTransformer(EMBED_MODEL_NAME)
     print(f"✅ Embeddings chargés ({corpus_embeddings.shape[0]} segments).")
+    
+    # Charger le modèle seulement si sentence-transformers est disponible
+    if SentenceTransformer is not None:
+      embed_model = SentenceTransformer(EMBED_MODEL_NAME)
+      print("✅ Modèle sentence-transformers chargé (recherche sémantique activée).")
+    else:
+      embed_model = None
+      print("⚠️ sentence-transformers non disponible (recherche Whoosh uniquement).")
 
     if Schema and StemmingAnalyzer and FrenchStemmer:
       # Utilisation du stemmer français (Snowball) au lieu du Porter anglais
