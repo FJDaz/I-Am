@@ -35,9 +35,11 @@ Thumbs.db
 # Logs
 *.log
 
-# Data (optionnel - à garder si nécessaire pour déploiement)
-# data/*.npy
-# data/*.json
+# Data (fichiers volumineux - ne pas commiter)
+data/*.npy
+data/raw/**/*
+*.xls
+*.xlsx
 
 # Tests
 test_results_*.json
