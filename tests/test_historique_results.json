@@ -1,0 +1,88 @@
+[
+  {
+    "request_num": 1,
+    "status": "success",
+    "elapsed": 7.67377495765686,
+    "history_size": 0,
+    "history_tokens": 0,
+    "limited_history_size": 0,
+    "limited_history_tokens": 0,
+    "estimated_prompt_tokens": 1408,
+    "answer_tokens": 91
+  },
+  {
+    "request_num": 2,
+    "status": "success",
+    "elapsed": 8.806269884109497,
+    "history_size": 2,
+    "history_tokens": 116,
+    "limited_history_size": 2,
+    "limited_history_tokens": 116,
+    "estimated_prompt_tokens": 1525,
+    "answer_tokens": 106
+  },
+  {
+    "request_num": 3,
+    "status": "success",
+    "elapsed": 8.241637229919434,
+    "history_size": 4,
+    "history_tokens": 249,
+    "limited_history_size": 4,
+    "limited_history_tokens": 249,
+    "estimated_prompt_tokens": 1658,
+    "answer_tokens": 106
+  },
+  {
+    "request_num": 4,
+    "status": "success",
+    "elapsed": 9.100299835205078,
+    "history_size": 6,
+    "history_tokens": 382,
+    "limited_history_size": 6,
+    "limited_history_tokens": 382,
+    "estimated_prompt_tokens": 1789,
+    "answer_tokens": 119
+  },
+  {
+    "request_num": 5,
+    "status": "success",
+    "elapsed": 8.356268882751465,
+    "history_size": 8,
+    "history_tokens": 527,
+    "limited_history_size": 8,
+    "limited_history_tokens": 527,
+    "estimated_prompt_tokens": 1935,
+    "answer_tokens": 111
+  },
+  {
+    "request_num": 6,
+    "status": "success",
+    "elapsed": 8.321890830993652,
+    "history_size": 10,
+    "history_tokens": 663,
+    "limited_history_size": 10,
+    "limited_history_tokens": 663,
+    "estimated_prompt_tokens": 2077,
+    "answer_tokens": 104
+  },
+  {
+    "request_num": 7,
+    "status": "success",
+    "elapsed": 7.8593220710754395,
+    "history_size": 12,
+    "history_tokens": 799,
+    "limited_history_size": 12,
+    "limited_history_tokens": 799,
+    "estimated_prompt_tokens": 2209,
+    "answer_tokens": 132
+  },
+  {
+    "request_num": 8,
+    "status": "connection_error",
+    "history_size": 14,
+    "history_tokens": 952,
+    "limited_history_size": 12,
+    "limited_history_tokens": 836,
+    "estimated_prompt_tokens": 2246
+  }
+]

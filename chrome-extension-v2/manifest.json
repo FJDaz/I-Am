@@ -18,7 +18,8 @@
     {
       "resources": [
         "data/corpus_segments.json",
-        "data/lexique_enfance.json"
+        "data/lexique_enfance.json",
+        "data/questions_usager.json"
       ],
       "matches": [
         "https://www.amiens.fr/*"

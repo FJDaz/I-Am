@@ -1,0 +1,15 @@
+{
+  "lieux": [
+    {
+      "nom": "Espace Dewailly",
+      "adresse": "Place Dewailly, 80000 Amiens",
+      "description": "Lieu d'accueil pour les inscriptions en crèche municipale",
+      "coordonnees": {
+        "lat": 49.8942,
+        "lon": 2.2958
+      },
+      "url": "https://www.amiens.fr/vivre-a-amiens/enfance/faire-garder-son-enfant"
+    }
+  ]
+}
+

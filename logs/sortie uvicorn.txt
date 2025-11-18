@@ -1,0 +1,69 @@
+OPTIONS /rag-assistant HTTP/1.1" 200 OK
+[RAG DEBUG] Question: "C'est où pour s'incrire au centre ?" → [(7.0606060606060606, 'Vivre-a-Amiens_Enfance_a-l-ecole.txt (section 1)', ''), (7.035398230088496, 'Vivre-a-Amiens_Enfance_Centres-de-loisirs.txt (section 1)', ''), (7.0344827586206895, 'plaquette-creche-2024 (section 1)', '')]
+INFO:     127.0.0.1:61531 - "POST /rag-assistant HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/fastapi/routing.py", line 292, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/rag_assistant_server.py", line 841, in rag_assistant_endpoint
+    result = call_model(prompt)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/rag_assistant_server.py", line 680, in call_model
+    response = client.messages.create(
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/anthropic/_utils/_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/anthropic/resources/messages/messages.py", line 927, in create
+    return self._post(
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/anthropic/_base_client.py", line 1326, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/francois-jeandazin/Documents/En Cours/Crea/NUX/I Amiens/.venv/lib/python3.9/site-packages/anthropic/_base_client.py", line 1114, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CV9HSwNkuckrJUXxMsBs7'}
+

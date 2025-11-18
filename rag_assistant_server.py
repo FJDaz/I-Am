@@ -9,6 +9,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel
 from starlette.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
@@ -19,19 +20,66 @@ try:
 except ImportError as exc:
   raise SystemExit("Install anthropic package: pip install anthropic fastapi uvicorn") from exc
 
+# Import système adresses dynamique
+try:
+  from tools.address_fetcher import get_address_for_lieu, extract_address_from_text
+except ImportError:
+  # Fallback si le module n'est pas disponible
+  def get_address_for_lieu(*args, **kwargs):
+    return None
+  def extract_address_from_text(*args, **kwargs):
+    return None
+
 ASSISTANT_SYSTEM_PROMPT = """
 Tu es l'assistant officiel "Amiens Enfance".
 Analyse chaque question en tenant compte :
 - des segments RAG numérotés (#1, #2, …) et de leur résumé,
-- du mémo de conversation (ce qui a déjà été répondu).
+- du mémo de conversation (ce qui a déjà été répondu),
+- des données structurées fournies (listes RPE, lieux, etc.) si présentes.
 
 Style :
-- Réponse HTML très courte : intro ≤ 3 phrases, puis <h3>Synthèse</h3> (1 phrase) et <h3>Ouverture</h3> (1 phrase). Évite listes et répétitions inutiles.
-- Si une information a déjà été fournie, mentionne “déjà indiqué (#n)” ou renvoie au mémo plutôt que la détailler à nouveau.
+- Réponse HTML très courte : intro ≤ 3 phrases, puis <h3>Synthèse</h3> (1 phrase). Évite listes et répétitions inutiles.
+- NE PAS inclure de section "Ouverture" dans le HTML : les questions de suivi sont gérées séparément via follow_up_question.
+- Si une information a déjà été fournie, mentionne "déjà indiqué (#n)" ou renvoie au mémo plutôt que la détailler à nouveau.
 - Cite au moins une source cliquable si disponible.
 - Dans `alignment.summary`, indique clairement les segments exploités (ex. "Segments #1, #3").
+- Si des données structurées sont fournies (section "DONNÉES STRUCTURÉES"), tu DOIS les inclure dans ta réponse de manière claire et structurée.
 
-Ne mentionne rien en dehors des segments.
+IMPORTANT - Format des "follow_up_question" (ouvertures) :
+Les questions de suivi doivent être formulées COMME UN UTILISATEUR les poserait, pas comme l'assistant.
+- ❌ MAUVAIS : "Souhaitez-vous connaître votre quotient familial ?"
+- ❌ MAUVAIS : "Pouvez-vous me préciser le nombre de jours ?"
+- ❌ MAUVAIS : "Je quel est votre quotient familial pour que je puisse vous indiquer le tarif exact ?"
+- ✅ BON : "Quel est mon quotient familial ?"
+- ✅ BON : "Combien de jours par semaine ?"
+- ✅ BON : "Où se trouve cette école ?"
+
+Règles pour les ouvertures :
+- Question courte et directe (max 10 mots)
+- Formulation à la première personne (je/mon/mes/mon enfant)
+- Pas de formules de politesse ("Souhaitez-vous", "Pouvez-vous", "Je souhaite")
+- Pas de préfixe "Je " en début de phrase
+- Utilise "mon/mes" au lieu de "votre/vos" quand pertinent
+
+CRITÈRE ESSENTIEL - Ouvertures basées sur RAG :
+La question d'ouverture DOIT porter sur un sujet dont la réponse est disponible dans :
+- Les segments RAG fournis (#1, #2, #3, etc.)
+- Les données structurées fournies (tarifs, lieux, RPE, écoles)
+
+Analyse les segments RAG pour identifier :
+- Informations partielles qui méritent un approfondissement
+- Sujets connexes mentionnés mais non détaillés
+- Données structurées disponibles (tarifs → quotient familial, lieux → adresse, etc.)
+
+Exemples d'ouvertures valides (réponse dans RAG) :
+- Si segments parlent de tarifs → "Quel est mon quotient familial ?"
+- Si segments parlent de lieux → "Où se trouve [lieu mentionné] ?"
+- Si segments parlent d'inscription → "Quels documents sont nécessaires ?"
+- Si segments parlent de RPE → "Quel est le contact de mon RPE ?"
+
+À ÉVITER : Questions sur des sujets absents des segments RAG ou données structurées.
+
+Ne mentionne rien en dehors des segments ET des données structurées fournies.
 
 Réponse obligatoire (JSON strict) :
 {
@@ -69,6 +117,10 @@ embed_model = None
 lexicon_entries: List[Dict[str, Any]] = []
 whoosh_index = None
 whoosh_dir: Optional[Path] = None
+rpe_data: Optional[Dict[str, Any]] = None
+lieux_data: Optional[Dict[str, Any]] = None
+tarifs_data: Optional[Dict[str, Any]] = None
+ecoles_data: Optional[Dict[str, Any]] = None
 try:
   from sentence_transformers import SentenceTransformer
 except ImportError:
@@ -81,6 +133,7 @@ try:
   from whoosh.fields import ID, TEXT, Schema
   from whoosh.index import create_in, open_dir
   from whoosh.qparser import MultifieldParser, OrGroup
+  from whoosh.lang.snowball.french import FrenchStemmer
 except ImportError:
   scoring = None
   StemmingAnalyzer = None
@@ -88,6 +141,7 @@ except ImportError:
   create_in = None
   open_dir = None
   MultifieldParser = None
+  FrenchStemmer = None
 
 
 class RagSegment(BaseModel):
@@ -279,6 +333,66 @@ def _normalize(text: Optional[str]) -> str:
   cleaned = "".join(cleaned_chars)
   cleaned = " ".join(cleaned.split())
   return cleaned
+
+
+def load_structured_data():
+  """Charge les données structurées (RPE, lieux, tarifs, écoles)."""
+  global rpe_data, lieux_data, tarifs_data, ecoles_data
+  data_dir = Path(__file__).resolve().parent / "data"
+  
+  # Charger données RPE
+  rpe_path = data_dir / "rpe_contacts.json"
+  if rpe_path.exists():
+    try:
+      with open(rpe_path, "r", encoding="utf-8") as f:
+        rpe_data = json.load(f)
+      print(f"✅ Données RPE chargées ({len(rpe_data.get('rpe_list', []))} RPE)")
+    except Exception as e:
+      print(f"⚠️ Impossible de charger les données RPE: {e}")
+      rpe_data = None
+  else:
+    rpe_data = None
+  
+  # Charger données lieux
+  lieux_path = data_dir / "lieux_importants.json"
+  if lieux_path.exists():
+    try:
+      with open(lieux_path, "r", encoding="utf-8") as f:
+        lieux_data = json.load(f)
+      print(f"✅ Données lieux chargées ({len(lieux_data.get('lieux', []))} lieux)")
+    except Exception as e:
+      print(f"⚠️ Impossible de charger les données lieux: {e}")
+      lieux_data = None
+  else:
+    lieux_data = None
+  
+  # Charger données tarifs
+  tarifs_path = data_dir / "tarifs_2024_2025.json"
+  if tarifs_path.exists():
+    try:
+      with open(tarifs_path, "r", encoding="utf-8") as f:
+        tarifs_data = json.load(f)
+      total = tarifs_data.get("total_tables", 0)
+      print(f"✅ Données tarifs chargées ({total} tableaux)")
+    except Exception as e:
+      print(f"⚠️ Impossible de charger les données tarifs: {e}")
+      tarifs_data = None
+  else:
+    tarifs_data = None
+  
+  # Charger données écoles
+  ecoles_path = data_dir / "ecoles_amiens.json"
+  if ecoles_path.exists():
+    try:
+      with open(ecoles_path, "r", encoding="utf-8") as f:
+        ecoles_data = json.load(f)
+      total = ecoles_data.get("total", 0)
+      print(f"✅ Données écoles chargées ({total} écoles)")
+    except Exception as e:
+      print(f"⚠️ Impossible de charger les données écoles: {e}")
+      ecoles_data = None
+  else:
+    ecoles_data = None
 
 
 def load_lexicon():
@@ -518,6 +632,129 @@ def build_prompt(payload: AssistantRequest) -> str:
     weight_display = f"{payload.intent_weight:.2f}" if payload.intent_weight is not None else "n/a"
     lines.append(f"Intention détectée: {payload.intent_label} (poids {weight_display})\n")
 
+  # Injecter données structurées selon le contexte
+  question_lower = (payload.question or "").lower()
+  normalized_lower = (payload.normalized_question or "").lower()
+  question_text = question_lower + " " + normalized_lower
+  
+  # Détection améliorée : utiliser lexique au lieu de liste en dur
+  lexicon_matches = match_lexicon_entries(payload.question, payload.normalized_question)
+  rpe_relevant = any(
+    entry.get("terme_usager") in ["inscription", "inscrire", "crèche", "relais"] 
+    for entry in lexicon_matches
+  ) or any(term in question_text for term in ["rpe", "relais petite enfance"])
+  
+  # Données RPE si question concerne les RPE/crèche/inscription
+  if rpe_data and rpe_relevant:
+    lines.append("\n=== DONNÉES STRUCTURÉES : LISTE DES RPE ===\n")
+    lines.append("Tu DOIS inclure cette liste complète dans ta réponse si la question concerne les RPE :\n")
+    for rpe in rpe_data.get("rpe_list", []):
+      lines.append(f"- {rpe['nom']} : Secteurs {', '.join(rpe['secteurs'][:3])}... | Adresse: {rpe['adresse']} | Tél: {rpe['telephone']} | Email: {rpe['email']}\n")
+    lines.append("\n")
+  
+  # Données tarifs si question tarifaire
+  if tarifs_data and any(term in question_text for term in ["tarif", "prix", "coût", "€", "cantine", "restauration", "périscolaire", "mercredi", "alsh"]):
+    lines.append("\n=== DONNÉES STRUCTURÉES : TABLEAUX TARIFAIRES ===\n")
+    lines.append("Tu DOIS inclure les tableaux tarifaires pertinents dans ta réponse :\n")
+    tarifs_by_type = tarifs_data.get("tarifs_by_type", {})
+    if "cantine" in tarifs_by_type and any(t in question_text for t in ["cantine", "restauration", "repas"]):
+      for table_html in tarifs_by_type["cantine"][:2]:  # Max 2 tableaux
+        lines.append(table_html + "\n")
+    if "periscolaire" in tarifs_by_type and "périscolaire" in question_text:
+      for table_html in tarifs_by_type["periscolaire"][:2]:
+        lines.append(table_html + "\n")
+    if "mercredi" in tarifs_by_type and "mercredi" in question_text:
+      for table_html in tarifs_by_type["mercredi"][:1]:
+        lines.append(table_html + "\n")
+    lines.append("\n")
+  
+  # Données lieux : détection améliorée avec système adresses dynamique
+  question_geographique = any(term in question_text for term in ["où", "adresse", "localisation", "se trouve", "situé", "localiser"])
+  
+  # Détecter les lieux mentionnés dans la question
+  lieux_mentionnes = []
+  
+  # 1. Chercher dans lieux_data
+  if lieux_data:
+    for lieu in lieux_data.get("lieux", []):
+      lieu_nom_lower = lieu["nom"].lower()
+      if lieu_nom_lower in question_text:
+        lieux_mentionnes.append({
+          "nom": lieu["nom"],
+          "adresse": lieu.get("adresse"),
+          "description": lieu.get("description", ""),
+          "source": "lieux_data"
+        })
+  
+  # 2. Chercher des patterns de noms de lieux (majuscules, noms propres)
+  # Patterns pour détecter des noms de lieux potentiels
+  lieu_patterns = [
+    r"\b(?:espace|centre|salle|théâtre|médiathèque|bibliothèque|gymnase|stade|piscine|école|mairie|hôtel de ville)\s+[A-Z][a-zéèêàâôùûç]+(?:\s+[A-Z][a-zéèêàâôùûç]+)*",
+    r"\b[A-Z][a-zéèêàâôùûç]+\s+(?:de|du|des|d')\s+[A-Z][a-zéèêàâôùûç]+",
+  ]
+  
+  for pattern in lieu_patterns:
+    matches = re.findall(pattern, payload.question or "", re.IGNORECASE)
+    for match in matches:
+      match_lower = match.lower()
+      # Éviter les doublons et les mots trop courts
+      if len(match) > 5 and not any(l["nom"].lower() == match_lower for l in lieux_mentionnes):
+        lieux_mentionnes.append({
+          "nom": match,
+          "adresse": None,
+          "description": "",
+          "source": "detection"
+        })
+  
+  # 3. Si question géographique et lieux détectés, chercher/adapter les adresses
+  if question_geographique and lieux_mentionnes:
+    lines.append("\n=== DONNÉES STRUCTURÉES : LIEUX ET ADRESSES ===\n")
+    for lieu_info in lieux_mentionnes:
+      lieu_nom = lieu_info["nom"]
+      adresse = lieu_info.get("adresse")
+      
+      # Si pas d'adresse dans lieux_data, chercher dans segments RAG puis OSM
+      if not adresse:
+        # Vérifier d'abord dans les segments RAG
+        adresse_trouvee = False
+        if payload.rag_results:
+          for seg in payload.rag_results:
+            content = (seg.content or seg.excerpt or "").lower()
+            if lieu_nom.lower() in content:
+              extracted = extract_address_from_text(seg.content or seg.excerpt or "")
+              if extracted:
+                adresse = extracted
+                adresse_trouvee = True
+                break
+        
+        # Si toujours pas trouvé, utiliser address_fetcher (cherche dans RAG puis OSM)
+        if not adresse_trouvee:
+          fetched_address = get_address_for_lieu(
+            lieu_nom,
+            segments_rag=payload.rag_results,
+            city="Amiens"
+          )
+          if fetched_address:
+            adresse = fetched_address
+      
+      # Injecter dans le prompt
+      if adresse:
+        desc = f" - {lieu_info['description']}" if lieu_info.get("description") else ""
+        lines.append(f"- {lieu_nom} : {adresse}{desc}\n")
+      else:
+        # Même sans adresse, mentionner le lieu si détecté
+        desc = f" - {lieu_info['description']}" if lieu_info.get("description") else ""
+        lines.append(f"- {lieu_nom}{desc} (adresse à rechercher)\n")
+    lines.append("\n")
+  
+  # Données écoles si question sur écoles/établissements
+  if ecoles_data and any(term in question_text for term in ["école", "établissement", "liste", "contact", "adresse école"]):
+    lines.append("\n=== DONNÉES STRUCTURÉES : ÉCOLES D'AMIENS ===\n")
+    lines.append(f"Total: {ecoles_data.get('total', 0)} écoles disponibles.\n")
+    lines.append("Si la question demande une liste ou des contacts d'écoles, tu peux mentionner qu'il y a 78 écoles publiques réparties en 5 secteurs.\n")
+    lines.append("Pour des informations détaillées par école, oriente vers la carte interactive ou les mairies de secteur.\n")
+    lines.append("\n")
+
   if payload.conversation:
     lines.append("Historique:\n")
     for turn in payload.conversation[-6:]:
@@ -572,11 +809,12 @@ def load_embeddings():
     embed_model = SentenceTransformer(EMBED_MODEL_NAME)
     print(f"✅ Embeddings chargés ({corpus_embeddings.shape[0]} segments).")
 
-    if Schema and StemmingAnalyzer:
+    if Schema and StemmingAnalyzer and FrenchStemmer:
+      # Utilisation du stemmer français (Snowball) au lieu du Porter anglais
       schema = Schema(
         id=ID(stored=True, unique=True),
         label=TEXT(stored=True),
-        content=TEXT(analyzer=StemmingAnalyzer(minsize=2), stored=False),
+        content=TEXT(analyzer=StemmingAnalyzer(minsize=2, stemfn=FrenchStemmer().stem), stored=False),
       )
       whoosh_dir = Path(tempfile.mkdtemp(prefix="amiens_whoosh_"))
       ix = create_in(whoosh_dir, schema)
@@ -632,7 +870,8 @@ def semantic_search(
           "source": meta.get("source"),
           "content": meta.get("content"),
         }
-        bm25_weight = score * 1.2
+        # Rééquilibrage du poids BM25 (avec stemmer français maintenant)
+        bm25_weight = score * 1.0
         if normalized_terms:
           normalized_content = _normalize(meta.get("content") or "")
           term_hits = sum(1 for term in normalized_terms if term and term in normalized_content)
@@ -658,7 +897,8 @@ def semantic_search(
           "source": meta.get("source"),
           "content": meta.get("content"),
         }
-      cosine_weight = score * 0.4
+      # Augmentation du poids sémantique (cosine similarity)
+      cosine_weight = score * 0.6
       weights[doc_id] = weights.get(doc_id, 0.0) + cosine_weight
 
   ranked = sorted(weights.items(), key=lambda item: item[1], reverse=True)[:top_k]
@@ -672,13 +912,18 @@ def semantic_search(
 
 
 def call_model(prompt: str) -> Dict[str, Any]:
-  response = client.messages.create(
-    model="claude-3-7-sonnet-20250219",
-    max_tokens=900,
-    temperature=0.2,
-    system=ASSISTANT_SYSTEM_PROMPT,
-    messages=[{"role": "user", "content": prompt}],
-  )
+  try:
+    response = client.messages.create(
+      model="claude-3-7-sonnet-20250219",
+      max_tokens=900,
+      temperature=0.2,
+      system=ASSISTANT_SYSTEM_PROMPT,
+      messages=[{"role": "user", "content": prompt}],
+      timeout=30.0,  # Timeout de 30 secondes pour l'API Claude (optimisé)
+    )
+  except Exception as e:
+    print(f"❌ Erreur API Claude: {e}")
+    raise HTTPException(status_code=502, detail=f"Erreur API Claude: {str(e)}")
 
   if not response.content:
     raise HTTPException(status_code=502, detail="Réponse vide du modèle")
@@ -721,134 +966,358 @@ def call_model(prompt: str) -> Dict[str, Any]:
 app = FastAPI(title="RAG Assistant Amiens V2", version="0.2.0")
 load_embeddings()
 load_lexicon()
+load_structured_data()
 
 app.add_middleware(
   CORSMiddleware,
-  allow_origins=["http://localhost:8711", "https://localhost:8711", "https://www.amiens.fr"],
+  allow_origins=[
+    "http://localhost:8711",
+    "https://localhost:8711",
+    "https://www.amiens.fr",
+    os.environ.get("ALLOWED_ORIGIN", ""),  # Pour déploiement (Railway/Render)
+  ],
   allow_credentials=True,
   allow_methods=["POST"],
   allow_headers=["*"]
 )
 
+# Compression Gzip pour réduire la latence
+app.add_middleware(GZipMiddleware, minimum_size=1000)
+
+
+def has_rag_answer(question: str, rag_results: List[RagSegment]) -> bool:
+  """
+  Vérifie si une question a une réponse potentielle dans les segments RAG.
+  """
+  if not question or not rag_results:
+    return False
+  
+  # Extraire les mots-clés de la question (enlever mots vides)
+  stop_words = {"quel", "quelle", "quels", "quelles", "est", "sont", "mon", "ma", "mes", "le", "la", "les", "un", "une", "des", "de", "du", "à", "pour", "avec", "dans", "sur", "par", "où", "comment", "quand", "combien"}
+  question_lower = question.lower()
+  question_words = [w for w in re.findall(r'\b\w+\b', question_lower) if w not in stop_words and len(w) > 2]
+  
+  if not question_words:
+    return False
+  
+  # Vérifier si au moins 50% des mots-clés sont présents dans les segments
+  for segment in rag_results:
+    content = (segment.content or segment.excerpt or "").lower()
+    matches = sum(1 for word in question_words if word in content)
+    if matches >= len(question_words) * 0.5:  # Au moins 50% des mots-clés
+      return True
+  
+  return False
+
+
+def generate_followup_from_structured_data(
+  question: str,
+  rag_results: List[RagSegment],
+  structured_data: Dict[str, Any]
+) -> Optional[str]:
+  """
+  Génère une question d'ouverture alternative basée sur les données structurées disponibles.
+  """
+  question_lower = question.lower()
+  
+  # Analyser le contenu des segments pour identifier les sujets
+  rag_content = " ".join([(seg.content or seg.excerpt or "").lower() for seg in rag_results[:3]])
+  
+  # Mapping basé sur les données structurées disponibles
+  if structured_data.get("tarifs_data") and ("tarif" in question_lower or "prix" in question_lower or "coût" in question_lower):
+    if "quotient" not in rag_content:
+      return "Quel est mon quotient familial ?"
+  
+  if structured_data.get("lieux_data") and ("où" in question_lower or "adresse" in question_lower or "localisation" in question_lower):
+    # Chercher un lieu mentionné dans les segments
+    for seg in rag_results[:3]:
+      content = (seg.content or seg.excerpt or "").lower()
+      if "espace" in content or "école" in content or "crèche" in content:
+        return "Où se trouve ce lieu ?"
+  
+  if structured_data.get("rpe_data") and ("rpe" in question_lower or "relais" in question_lower):
+    if "contact" not in rag_content and "téléphone" not in rag_content:
+      return "Quel est le contact de mon RPE ?"
+  
+  if structured_data.get("ecoles_data") and ("école" in question_lower or "scolaire" in question_lower):
+    if "secteur" not in rag_content:
+      return "Dans quel secteur se trouve cette école ?"
+  
+  # Fallback générique basé sur données disponibles
+  if structured_data.get("tarifs_data"):
+    return "Quels sont les tarifs détaillés ?"
+  
+  if structured_data.get("rpe_data"):
+    return "Quels sont les contacts des RPE ?"
+  
+  return None
+
+
+def normalize_followup_question(question: Optional[str]) -> Optional[str]:
+  """
+  Normalise une question de suivi pour qu'elle soit formulée comme un utilisateur la poserait.
+  Transforme les questions d'assistant en questions utilisateur directes.
+  """
+  if not question:
+    return None
+  
+  # Nettoyer la question
+  q = question.strip()
+  if not q:
+    return None
+  
+  # Enlever les préfixes "Je " en début de phrase (plusieurs variantes)
+  q = re.sub(r'^Je\s+', '', q, flags=re.IGNORECASE)
+  q = re.sub(r'^je\s+', '', q, flags=re.IGNORECASE)
+  
+  # Enlever les formules de politesse courantes
+  patterns_to_remove = [
+    r'^Souhaitez-vous\s+',
+    r'^Pouvez-vous\s+',
+    r'^Pourriez-vous\s+',
+    r'^Voulez-vous\s+',
+    r'^Je souhaite\s+',
+    r'^Je voudrais\s+',
+    r'^Je veux\s+',
+    r'^Je dois\s+',
+    r'^Souhaitez-vous que je\s+',
+    r'^Pouvez-vous me\s+',
+    r'^Pourriez-vous me\s+',
+  ]
+  
+  for pattern in patterns_to_remove:
+    q = re.sub(pattern, '', q, flags=re.IGNORECASE)
+  
+  # Enlever "me " qui reste parfois après "Pouvez-vous me"
+  q = re.sub(r'^me\s+', '', q, flags=re.IGNORECASE)
+  
+  # Enlever "Je " qui peut rester après d'autres transformations
+  # Faire plusieurs passes pour être sûr
+  for _ in range(3):  # Plusieurs passes pour gérer les cas complexes
+    q = re.sub(r'^Je\s+', '', q, flags=re.IGNORECASE)
+    q = re.sub(r'^je\s+', '', q, flags=re.IGNORECASE)
+  
+  # Capitaliser la première lettre
+  if q:
+    q = q[0].upper() + q[1:] if len(q) > 1 else q.upper()
+  
+  # Remplacer "votre/vos" par "mon/mes" quand pertinent
+  # Mais seulement si c'est clairement une question utilisateur
+  q = re.sub(r'\bvotre\s+quotient\s+familial\b', 'mon quotient familial', q, flags=re.IGNORECASE)
+  q = re.sub(r'\bvotre\s+enfant\b', 'mon enfant', q, flags=re.IGNORECASE)
+  q = re.sub(r'\bvotre\s+situation\b', 'ma situation', q, flags=re.IGNORECASE)
+  q = re.sub(r'\bvotre\s+tarif\b', 'mon tarif', q, flags=re.IGNORECASE)
+  q = re.sub(r'\bvos\s+enfants\b', 'mes enfants', q, flags=re.IGNORECASE)
+  
+  # Enlever les phrases trop longues ou explicatives
+  # Si la question contient "pour que je puisse", "afin de", etc., simplifier
+  q = re.sub(r'\s+pour\s+que\s+je\s+puisse[^?]*', '', q, flags=re.IGNORECASE)
+  q = re.sub(r'\s+afin\s+de[^?]*', '', q, flags=re.IGNORECASE)
+  q = re.sub(r'\s+qui\s+s\'applique\s+à[^?]*', '', q, flags=re.IGNORECASE)
+  
+  # S'assurer qu'il y a un point d'interrogation
+  if not q.endswith('?'):
+    # Si la phrase se termine par un point, le remplacer par ?
+    if q.endswith('.'):
+      q = q[:-1] + '?'
+    else:
+      q = q + '?'
+  
+  # Nettoyer les espaces multiples
+  q = re.sub(r'\s+', ' ', q).strip()
+  
+  # Limiter la longueur (max 80 caractères pour une question courte)
+  if len(q) > 80:
+    # Prendre la première phrase jusqu'au point d'interrogation
+    match = re.match(r'^([^?]+)\?', q)
+    if match:
+      q = match.group(1).strip() + '?'
+    else:
+      q = q[:77] + '...?'
+  
+  return q if q else None
+
 
 @app.post("/rag-assistant", response_model=AssistantResponse)
 def rag_assistant_endpoint(payload: AssistantRequest):
-  lexicon_matches = match_lexicon_entries(payload.question, payload.normalized_question)
-  expanded_question = expand_query_with_lexicon(payload.question or "", lexicon_matches)
-
-  incoming_segments = payload.rag_results or []
-  rag_results: List[RagSegment] = []
-  for item in incoming_segments:
-    if isinstance(item, RagSegment):
-      rag_results.append(item)
-    elif isinstance(item, dict):
-      rag_results.append(RagSegment(**item))
-    else:
-      # fallback : tente conversion via dict
-      if hasattr(RagSegment, "model_validate"):
-        rag_results.append(RagSegment.model_validate(item))  # type: ignore[attr-defined]
-      else:
-        rag_results.append(RagSegment.parse_obj(item))
-
-  if not rag_results:
-    fallback_query = expanded_question or payload.question
-    fallback_segments = semantic_search(fallback_query, lexicon_matches, top_k=5, min_score=0.25)
-    for score, meta in fallback_segments:
-      rag_results.append(
-        RagSegment(
-          label=meta.get("label") or meta.get("source"),
-          url=meta.get("url"),
-          score=score,
-          excerpt=(meta.get("content") or "")[:400],
-          content=meta.get("content"),
-        )
-      )
-
-  user_snippet = extract_user_snippet(payload.question)
-  if user_snippet and not any(seg.custom_id == "U" for seg in rag_results):
-    max_score = max((seg.score or 0.0) for seg in rag_results) if rag_results else 0.0
-    rag_results.insert(
-      0,
-      RagSegment(
-        label="Contribution utilisateur",
-        score=max_score + CURRENCY_BONUS,
-        excerpt=user_snippet[:400],
-        content=user_snippet,
-        custom_id="U",
-      )
-    )
-
-  apply_currency_bonus(payload.question, payload.normalized_question, rag_results)
-  apply_lexicon_bonus(rag_results, lexicon_matches)
-
   try:
-    debug_scores = sorted(
-      (
-        (
-          float(seg.score) if seg.score is not None else 0.0,
-          seg.label or getattr(seg, "source", None) or seg.custom_id or "Segment",
-          seg.custom_id or "",
+    lexicon_matches = match_lexicon_entries(payload.question, payload.normalized_question)
+    expanded_question = expand_query_with_lexicon(payload.question or "", lexicon_matches)
+
+    incoming_segments = payload.rag_results or []
+    rag_results: List[RagSegment] = []
+    for item in incoming_segments:
+      if isinstance(item, RagSegment):
+        rag_results.append(item)
+      elif isinstance(item, dict):
+        rag_results.append(RagSegment(**item))
+      else:
+        # fallback : tente conversion via dict
+        if hasattr(RagSegment, "model_validate"):
+          rag_results.append(RagSegment.model_validate(item))  # type: ignore[attr-defined]
+        else:
+          rag_results.append(RagSegment.parse_obj(item))
+
+    if not rag_results:
+      fallback_query = expanded_question or payload.question
+      fallback_segments = semantic_search(fallback_query, lexicon_matches, top_k=5, min_score=0.25)
+      for score, meta in fallback_segments:
+        rag_results.append(
+          RagSegment(
+            label=meta.get("label") or meta.get("source"),
+            url=meta.get("url"),
+            score=score,
+            excerpt=(meta.get("content") or "")[:400],
+            content=meta.get("content"),
+          )
         )
-        for seg in rag_results
+
+    user_snippet = extract_user_snippet(payload.question)
+    if user_snippet and not any(seg.custom_id == "U" for seg in rag_results):
+      max_score = max((seg.score or 0.0) for seg in rag_results) if rag_results else 0.0
+      rag_results.insert(
+        0,
+        RagSegment(
+          label="Contribution utilisateur",
+          score=max_score + CURRENCY_BONUS,
+          excerpt=user_snippet[:400],
+          content=user_snippet,
+          custom_id="U",
+        )
+      )
+
+    apply_currency_bonus(payload.question, payload.normalized_question, rag_results)
+    apply_lexicon_bonus(rag_results, lexicon_matches)
+
+    try:
+      debug_scores = sorted(
+        (
+          (
+            float(seg.score) if seg.score is not None else 0.0,
+            seg.label or getattr(seg, "source", None) or seg.custom_id or "Segment",
+            seg.custom_id or "",
+          )
+          for seg in rag_results
+        ),
+        key=lambda entry: entry[0],
+        reverse=True,
+      )[:5]
+      if lexicon_matches:
+        matched_terms = [entry.get("terme_usager") for entry in lexicon_matches]
+        print(f"[RAG DEBUG] Question: {payload.question!r} (lexique: {matched_terms}) → {debug_scores}")
+      else:
+        print(f"[RAG DEBUG] Question: {payload.question!r} → {debug_scores}")
+    except Exception as exc:
+      print(f"[RAG DEBUG] Impossible d'afficher les scores: {exc}")
+
+    intent_label = payload.intent_label
+    intent_weight = payload.intent_weight
+    if intent_label is None or intent_weight is None:
+      intent_label, intent_weight = detect_user_intention(payload.question, payload.normalized_question)
+
+    conversation_raw = list(payload.conversation or [])
+    conversation: List[ConversationTurn] = []
+    for entry in conversation_raw:
+      if isinstance(entry, ConversationTurn):
+        conversation.append(entry)
+      elif isinstance(entry, dict):
+        role = entry.get("role", "assistant")
+        content = entry.get("content", "")
+        conversation.append(ConversationTurn(role=role, content=content))
+
+    summary_entries: List[str] = []
+    for ref, seg in compute_segment_refs(rag_results):
+      snippet = (seg.excerpt or seg.content or "").replace("\n", " ")
+      snippet = snippet[:160]
+      summary_entries.append(f"#{ref}: {seg.label or getattr(seg, 'source', None) or 'Segment'} — {snippet}")
+    if summary_entries:
+      memo_text = " | ".join(summary_entries[:5])
+      conversation.append(ConversationTurn(role="assistant", content=f"Mémo RAG actuel : {memo_text}"))
+
+    enriched_payload = payload.model_copy()
+    enriched_payload.rag_results = rag_results
+    enriched_payload.conversation = conversation[-12:]
+    enriched_payload.intent_label = intent_label
+    enriched_payload.intent_weight = intent_weight
+
+    prompt = build_prompt(enriched_payload)
+    result = call_model(prompt)
+
+    alignment = result.get("alignment") or {}
+    
+    # Normaliser la question de suivi pour qu'elle soit formulée comme un utilisateur
+    raw_followup = result.get("follow_up_question")
+    normalized_followup = normalize_followup_question(raw_followup)
+    
+    # Validation : vérifier que l'ouverture a une réponse dans le RAG
+    if normalized_followup:
+      if not has_rag_answer(normalized_followup, rag_results):
+        # Fallback : générer une alternative depuis données structurées
+        structured_data = {
+          "tarifs_data": tarifs_data,
+          "rpe_data": rpe_data,
+          "lieux_data": lieux_data,
+          "ecoles_data": ecoles_data,
+        }
+        alternative_followup = generate_followup_from_structured_data(
+          payload.question or "",
+          rag_results,
+          structured_data
+        )
+        if alternative_followup:
+          normalized_followup = normalize_followup_question(alternative_followup)
+        else:
+          # Si pas d'alternative, supprimer l'ouverture plutôt que proposer une question sans réponse
+          normalized_followup = None
+    
+    response = AssistantResponse(
+      answer_html=result.get("answer_html", "<p>(Réponse indisponible)</p>"),
+      answer_text=result.get("answer_text"),
+      follow_up_question=normalized_followup,
+      alignment=AlignmentPayload(
+        status=alignment.get("status", "info"),
+        label=alignment.get("label", "Analyse RAG"),
+        summary=alignment.get("summary", "Alignement non précisée."),
       ),
-      key=lambda entry: entry[0],
-      reverse=True,
-    )[:5]
-    if lexicon_matches:
-      matched_terms = [entry.get("terme_usager") for entry in lexicon_matches]
-      print(f"[RAG DEBUG] Question: {payload.question!r} (lexique: {matched_terms}) → {debug_scores}")
-    else:
-      print(f"[RAG DEBUG] Question: {payload.question!r} → {debug_scores}")
-  except Exception as exc:
-    print(f"[RAG DEBUG] Impossible d'afficher les scores: {exc}")
-
-  intent_label = payload.intent_label
-  intent_weight = payload.intent_weight
-  if intent_label is None or intent_weight is None:
-    intent_label, intent_weight = detect_user_intention(payload.question, payload.normalized_question)
-
-  conversation_raw = list(payload.conversation or [])
-  conversation: List[ConversationTurn] = []
-  for entry in conversation_raw:
-    if isinstance(entry, ConversationTurn):
-      conversation.append(entry)
-    elif isinstance(entry, dict):
-      role = entry.get("role", "assistant")
-      content = entry.get("content", "")
-      conversation.append(ConversationTurn(role=role, content=content))
-
-  summary_entries: List[str] = []
-  for ref, seg in compute_segment_refs(rag_results):
-    snippet = (seg.excerpt or seg.content or "").replace("\n", " ")
-    snippet = snippet[:160]
-    summary_entries.append(f"#{ref}: {seg.label or getattr(seg, 'source', None) or 'Segment'} — {snippet}")
-  if summary_entries:
-    memo_text = " | ".join(summary_entries[:5])
-    conversation.append(ConversationTurn(role="assistant", content=f"Mémo RAG actuel : {memo_text}"))
-
-  enriched_payload = payload.model_copy()
-  enriched_payload.rag_results = rag_results
-  enriched_payload.conversation = conversation[-12:]
-  enriched_payload.intent_label = intent_label
-  enriched_payload.intent_weight = intent_weight
-
-  prompt = build_prompt(enriched_payload)
-  result = call_model(prompt)
-
-  alignment = result.get("alignment") or {}
-  response = AssistantResponse(
-    answer_html=result.get("answer_html", "<p>(Réponse indisponible)</p>"),
-    answer_text=result.get("answer_text"),
-    follow_up_question=result.get("follow_up_question"),
-    alignment=AlignmentPayload(
-      status=alignment.get("status", "info"),
-      label=alignment.get("label", "Analyse RAG"),
-      summary=alignment.get("summary", "Alignement non précisée."),
-    ),
-    sources=result.get("sources", []),
-  )
-  return response
+      sources=result.get("sources", []),
+    )
+    return response
+  except HTTPException:
+    # Re-raise les HTTPException (déjà gérées)
+    raise
+  except Exception as e:
+    # Capturer toutes les autres erreurs pour éviter les crashes
+    import traceback
+    error_trace = traceback.format_exc()
+    print(f"❌ Erreur dans rag_assistant_endpoint: {e}")
+    print(f"Traceback: {error_trace}")
+    raise HTTPException(
+      status_code=500,
+      detail=f"Erreur serveur: {str(e)}"
+    )
 
 
 if __name__ == "__main__":
-  uvicorn.run("rag_assistant_server:app", host="0.0.0.0", port=8711)
+  import os
+  # Port depuis variable d'environnement (pour Railway/Render) ou 8711 par défaut
+  port = int(os.environ.get("PORT", 8711))
+  ssl_keyfile = "localhost-key.pem"
+  ssl_certfile = "localhost-cert.pem"
+  if os.path.exists(ssl_keyfile) and os.path.exists(ssl_certfile):
+    uvicorn.run(
+      "rag_assistant_server:app",
+      host="0.0.0.0",
+      port=port,
+      ssl_keyfile=ssl_keyfile,
+      ssl_certfile=ssl_certfile,
+      timeout_keep_alive=30,
+      limit_concurrency=10
+    )
+  else:
+    uvicorn.run(
+      "rag_assistant_server:app",
+      host="0.0.0.0",
+      port=port,
+      timeout_keep_alive=30,
+      limit_concurrency=10
+    )

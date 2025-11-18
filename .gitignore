@@ -1,5 +1,44 @@
-.venv/
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# SSL Certificates
+*.pem
+localhost-key.pem
+localhost-cert.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
-*.pyc
-\#*/
+Thumbs.db
+
+# Logs
+*.log
+
+# Data (optionnel - à garder si nécessaire pour déploiement)
+# data/*.npy
+# data/*.json
+
+# Tests
+test_results_*.json
+test_results_*.csv

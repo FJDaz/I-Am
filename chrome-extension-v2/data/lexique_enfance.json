@@ -1,6 +1,19 @@
 {
   "lexique_enfance": [
     {
+      "terme_usager": "inscription",
+      "terme_admin": [
+        "COUPON-INSCRIPTION",
+        "formulaire inscription",
+        "demande d'inscription",
+        "s'inscrire",
+        "inscrire mon enfant",
+        "comment inscrire",
+        "où inscrire"
+      ],
+      "poids": 1.5
+    },
+    {
       "terme_usager": "tarifs",
       "terme_admin": [
         "Les tarifs – accueil pré et/ou post scolaire",
@@ -322,5 +335,3 @@
     }
   ]
 }
-
-

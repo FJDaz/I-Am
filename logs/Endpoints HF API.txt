@@ -1,0 +1,258 @@
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	message="Hello!!",
+	history=[[None,"Bonjour ! Je suis Spinoza. Discutons ensemble de cette question :\n\n**La liberté est-elle une illusion ?**\n\nQu'en penses-tu ?"]],
+	api_name="/chat_spinoza"
+)
+print(result)
+
+API name: /lambda
+copy
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	api_name="/lambda"
+)
+print(result)
+
+Accepts
+ 
+0
+ 
+parameters:
+
+
+Returns
+ 
+1 element
+
+tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None]
+The output value that appears in the "value_5" Chatbot component.
+
+API name: /lambda_1
+copy
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	api_name="/lambda_1"
+)
+print(result)
+
+Accepts
+ 
+0
+ 
+parameters:
+
+
+Returns
+ 
+tuple
+ 
+of
+ 
+2
+ 
+elements
+
+[0] tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None]
+The output value that appears in the "value_5" Chatbot component.
+
+[1] str
+The output value that appears in the "value_6" Textbox component.
+
+
+API name: /chat_bergson
+copy
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	message="Hello!!",
+	history=[[None,"Bonjour ! Je suis Henri Bergson. Discutons ensemble de cette question :\n\n**Se souvenir, est-ce revivre ?**\n\nQu'en penses-tu ?"]],
+	api_name="/chat_bergson"
+)
+print(result)
+
+Accepts
+ 
+2
+ 
+parameters:
+
+message str Required
+The input value that is provided in the "parameter_12" Textbox component.
+
+history tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None] Default: [[None,"Bonjour ! Je suis Henri Bergson. Discutons ensemble de cette question :\n\n**Se souvenir, est-ce revivre ?**\n\nQu'en penses-tu ?"]]
+The input value that is provided in the "parameter_11" Chatbot component. null
+
+Returns
+ 
+tuple
+ 
+of
+ 
+2
+ 
+elements
+
+[0] str
+The output value that appears in the "value_12" Textbox component.
+
+[1] tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None]
+The output value that appears in the "value_11" Chatbot component.
+
+API name: /lambda_2
+copy
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	api_name="/lambda_2"
+)
+print(result)
+
+Accepts
+ 
+0
+ 
+parameters:
+
+
+Returns
+ 
+1 element
+
+tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None]
+The output value that appears in the "value_11" Chatbot component.
+API name: /lambda_3
+copy
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	api_name="/lambda_3"
+)
+print(result)
+
+Accepts
+ 
+0
+ 
+parameters:
+
+
+Returns
+ 
+tuple
+ 
+of
+ 
+2
+ 
+elements
+
+[0] tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None]
+The output value that appears in the "value_11" Chatbot component.
+
+[1] str
+The output value that appears in the "value_12" Textbox component.
+API name: /chat_kant
+copy
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	message="Hello!!",
+	history=[[None,"Bonjour ! Je suis Emmanuel Kant. Discutons ensemble de cette question :\n\n**Que puis-je savoir du monde ?**\n\nQu'en penses-tu ?"]],
+	api_name="/chat_kant"
+)
+print(result)
+
+Accepts
+ 
+2
+ 
+parameters:
+
+message str Required
+The input value that is provided in the "parameter_18" Textbox component.
+
+history tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None] Default: [[None,"Bonjour ! Je suis Emmanuel Kant. Discutons ensemble de cette question :\n\n**Que puis-je savoir du monde ?**\n\nQu'en penses-tu ?"]]
+The input value that is provided in the "parameter_17" Chatbot component. null
+
+Returns
+ 
+tuple
+ 
+of
+ 
+2
+ 
+elements
+
+[0] str
+The output value that appears in the "value_18" Textbox component.
+
+[1] tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None]
+The output value that appears in the "value_17" Chatbot component.
+API name: /lambda_4
+copy
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	api_name="/lambda_4"
+)
+print(result)
+
+Accepts
+ 
+0
+ 
+parameters:
+
+
+Returns
+ 
+1 element
+
+tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None]
+The output value that appears in the "value_17" Chatbot component.
+API name: /lambda_5
+copy
+from gradio_client import Client
+
+client = Client("FJDaz/spinoza_NB")
+result = client.predict(
+	api_name="/lambda_5"
+)
+print(result)
+
+Accepts
+ 
+0
+ 
+parameters:
+
+
+Returns
+ 
+tuple
+ 
+of
+ 
+2
+ 
+elements
+
+[0] tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None]
+The output value that appears in the "value_17" Chatbot component.
+
+[1] str
+The output value that appears in the "value_18" Textbox component.
+

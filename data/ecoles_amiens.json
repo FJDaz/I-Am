@@ -1,0 +1,3831 @@
+{
+  "source": "OpenStreetMap Overpass API",
+  "total": 255,
+  "ecoles": [
+    {
+      "nom": "École élémentaire",
+      "adresse": "Grande Rue, 80800 Bonnay",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9335585,
+        "lon": 2.5137387
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 365496089,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École élémentaire Victoria",
+      "adresse": "Rue Victoria, 80800 Villers-Bretonneux",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8659495,
+        "lon": 2.5172739
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 369839615,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "sessad au fil du temps",
+      "adresse": "Rue Reaumur, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8737846,
+        "lon": 2.3098127
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 371216846,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle Pierre Perret",
+      "adresse": "Rue Baudrez, 80136 Rivery",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9004299,
+        "lon": 2.3215629
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 429887959,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École élémentaire Jeanne Arnaud et Jean Cayeux",
+      "adresse": "Rue Baudrez, 80136 Rivery",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9005122,
+        "lon": 2.3210309
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 429887960,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle",
+      "adresse": "Rue de Saint-Clément, 80270 Airaines",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9661745,
+        "lon": 1.9432464
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 998099262,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École élémentaire",
+      "adresse": "Rue Aristide Briand, 80270 Airaines",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9648928,
+        "lon": 1.9413604
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 998099341,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue du Général Leclerc et de la 2e D.B., 80420 Flixecourt",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0112441,
+        "lon": 2.0820658
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1019978366,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École élémentaire Jacques Prévert",
+      "adresse": "Rue du Château, 80470 Saint-Sauveur",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9363899,
+        "lon": 2.2124172
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1035818769,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire de la Vigne",
+      "adresse": "Rue Jean-Jacques Rousseau, 80310 Picquigny",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9421057,
+        "lon": 2.1469554
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1037107924,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue du Calvaire, 80300 Treux",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9579354,
+        "lon": 2.5902958
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1045141031,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École elementaire Jean de La Fontaine",
+      "adresse": "Rue de la Gare, 80800 Ribemont-sur-Ancre",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9593928,
+        "lon": 2.5670993
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1045540548,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Jacques Prévert",
+      "adresse": "Grande Rue, 80800 Méricourt-l'Abbé",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9532456,
+        "lon": 2.5659612
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1048913988,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue de la Mercerie, 80800 Corbie",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9084219,
+        "lon": 2.5093218
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1049373798,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Avenue du Maréchal Foch, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1576724,
+        "lon": 2.3414615
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1069681661,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue de l'Église, 80750 Candas",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1064932,
+        "lon": 2.2582668
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1074984385,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue de Montrelet, 80670 Bonneville",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0832295,
+        "lon": 2.2478645
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1075449703,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École Primaire",
+      "adresse": "Rue Eugène Létocart, 80850 Berteaucourt-les-Dames",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0463735,
+        "lon": 2.1530289
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1080786088,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Collège Joliot-Curie",
+      "adresse": "1 Rue Léon Poidevin",
+      "code_postal": "80330",
+      "ville": "Longueau",
+      "coordonnees": {
+        "lat": 49.8730424,
+        "lon": 2.3556213
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1362603742,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École Maternelle",
+      "adresse": "Rue du Chevalier de la Barre, 80330 Longueau",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8733927,
+        "lon": 2.351377
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1362603745,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École élémentaire Paul Baroux",
+      "adresse": "Rue Léon Poidevin, 80330 Longueau",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8735221,
+        "lon": 2.3549594
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1362603747,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Collège des Fontaines",
+      "adresse": "Rue de la Grenouillère, 80290 Poix-de-Picardie",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.7737049,
+        "lon": 1.9856304
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1528638671,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "CREDA",
+      "adresse": "Rue Modigliani, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9221073,
+        "lon": 2.2977823
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1534020395,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École primaire Réaumur",
+      "adresse": "Rue Reaumur, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8728446,
+        "lon": 2.3094891
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1538866181,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Collège Guy Mareschal",
+      "adresse": "Rue Elsa Triolet, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8709514,
+        "lon": 2.3285699
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1539913220,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École élémentaire chemin des hayettes",
+      "adresse": "Chemin des Hayettes, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.881682,
+        "lon": 2.28217
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1539913226,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire d'application Chateaudun",
+      "adresse": "Boulevard Chateaudun, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8840708,
+        "lon": 2.2810012
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1544080718,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École Georges Brassens",
+      "adresse": "Rue Verte, 80260 Flesselles",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0018907,
+        "lon": 2.2609382
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1636203989,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École la Clé des Champs",
+      "adresse": "Place Septime Houbron, 80260 Flesselles",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0033478,
+        "lon": 2.259692
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1636204081,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École Maternelle de la Salle",
+      "adresse": "Rue Gribeauval, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8862948,
+        "lon": 2.3056684
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1671862760,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire",
+      "adresse": "Rue Jules Ferry, 80430 Neuville-Coppegueule",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8481837,
+        "lon": 1.7545221
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1799474115,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire privée Saint-Jean",
+      "adresse": "Rue du Faubourg de Hem, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.901853,
+        "lon": 2.2787821
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1825447320,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Faubourg de Hem",
+      "adresse": "Rue du Faubourg de Hem, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9023241,
+        "lon": 2.2772144
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1825456211,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École élémentaire Faubourg de Hem",
+      "adresse": "Rue Verrier Lebel, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9021818,
+        "lon": 2.2765757
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1825461504,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Jules Verne",
+      "adresse": "Rue d'Abbeville, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9094686,
+        "lon": 2.2594555
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1825744257,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire privée Saint-Jacques",
+      "adresse": "Rue Robert Pierre, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8928685,
+        "lon": 2.289049
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1848662311,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire Jules Lefèbvre",
+      "adresse": "Rue Jules Lefebvre, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.887116,
+        "lon": 2.2913725
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1868558714,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Lycée général et technologique Robert de Luzarches",
+      "adresse": "Rue Jules Barni, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8855381,
+        "lon": 2.3212904
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1932449751,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle Publique de Conty",
+      "adresse": "Rue des Écoles, 80160 Conty",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.7396536,
+        "lon": 2.1537472
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2021954659,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire Publique de Conty",
+      "adresse": "Rue des Écoles, 80160 Conty",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.7392376,
+        "lon": 2.1526851
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2021954660,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire L. De La Moissonnière",
+      "adresse": "Rue Denis Sevin",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8696322,
+        "lon": 2.242573
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2065226757,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École maternelle Edmond Rostand",
+      "adresse": "Rue Edmond Rostand, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8716994,
+        "lon": 2.3204157
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2425473294,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École élémentaire Edmond Rostand",
+      "adresse": "Rue Edmond Rostand, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8719952,
+        "lon": 2.3201784
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2425473299,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire privée Coeur Immaculé de Marie",
+      "adresse": "Rue Edmond Rostand, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8748518,
+        "lon": 2.3288938
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2426850642,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle Le Petit Prince",
+      "adresse": "Rue du Maréchal Foch, 80800 Villers-Bretonneux",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8693235,
+        "lon": 2.5138552
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2458103831,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Saint-Exupéry",
+      "adresse": "Rue du Général Leclerc, 80800 Villers-Bretonneux",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.868567,
+        "lon": 2.5138995
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2458103832,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Lycée des métiers Saint-Rémi",
+      "adresse": "Rue des Sergents, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8937639,
+        "lon": 2.2985362
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2464239647,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Lycée Edouard Branly",
+      "adresse": "Rue Alexandre Dumas, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8743733,
+        "lon": 2.2986229
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2523420130,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "Lycée Louis Thuillier",
+      "adresse": "Accueil - Gand, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8759774,
+        "lon": 2.2971744
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2523420177,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "Lycée Edouard Gand",
+      "adresse": "Accueil - Gand, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8772682,
+        "lon": 2.2943787
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2523420210,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "École Primaire Roses de Picardie",
+      "adresse": "12 Rue Charles de Gaulle",
+      "code_postal": "80800",
+      "ville": "Corbie",
+      "coordonnees": {
+        "lat": 49.9088611,
+        "lon": 2.5108587
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2604545804,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire du Vaudier",
+      "adresse": "Rue James Vacandart, 80430 Beaucamps-le-Vieux",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8441083,
+        "lon": 1.7769798
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2606247545,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire Publique",
+      "adresse": "Rue de Saint-Sauveur, 80260 Bertangles",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.968968,
+        "lon": 2.2949199
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2748480779,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "Centre de Formation d'Apprentis",
+      "adresse": "Rue des Deux Ponts, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8892679,
+        "lon": 2.264003
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2925960440,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue du Pressoir, 80670 Wargnies",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0344014,
+        "lon": 2.2536222
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 2948815127,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École de Cirque",
+      "adresse": "Rue Albert Roze, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8915968,
+        "lon": 2.29351
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3097229182,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire d'application Bapaume",
+      "adresse": "Boulevard de Bapaume, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8818483,
+        "lon": 2.3184131
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3270645874,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Paul Vincensini",
+      "adresse": "Rue Léon Dupontreué, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9043906,
+        "lon": 2.3090413
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3314283086,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École Élémentaire Sainte-Catherine",
+      "adresse": "Rue Sainte-Catherine, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8974327,
+        "lon": 2.2965971
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3331726622,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire d'application Barni",
+      "adresse": "Chaussée Jules Ferry, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8850709,
+        "lon": 2.3218987
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3500698758,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École Primaire Julia et René Lamps",
+      "adresse": "Rue de Mercey, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8777322,
+        "lon": 2.3265513
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3547102366,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Pain d'Epice",
+      "adresse": "Rue de Cagny, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8769889,
+        "lon": 2.3278712
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3547106094,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire",
+      "adresse": "Rue d'en Bas, 80670 Pernois",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.052692,
+        "lon": 2.1857618
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3731696855,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire privée Notre-Dame",
+      "adresse": "Rue des Favorins, 80310 Belloy-sur-Somme",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9675581,
+        "lon": 2.1356491
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3731723162,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Les Capucines",
+      "adresse": "Rue Eugène Després, 80440 Boves",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8448269,
+        "lon": 2.3902225
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3791332418,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Les Deux Vallées",
+      "adresse": "Rue Eugène Després, 80440 Boves",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8448097,
+        "lon": 2.3907322
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3791332431,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Faubourg de Beauvais",
+      "adresse": "Route de Rouen, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8895014,
+        "lon": 2.2887424
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3791343608,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Collège Sainte-Famille",
+      "adresse": "Rue Charles de Foucauld, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8896001,
+        "lon": 2.3081319
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3889655140,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle Condorcet",
+      "adresse": "Rue Condorcet, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8761746,
+        "lon": 2.3259095
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3890008199,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Lycée général et technologique privé Sainte-Famille",
+      "adresse": "Rue de Castille, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8887206,
+        "lon": 2.3076402
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 3891561551,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École élémentaire Victoria",
+      "adresse": "Rue Victoria, 80800 Villers-Bretonneux",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8656396,
+        "lon": 2.5172992
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 4155225612,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle Chemin des Plantes annexe INSPE",
+      "adresse": "Chemin des Plantes, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8822774,
+        "lon": 2.2747052
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 4228792210,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École Primaire Les Fontaines Bleues",
+      "adresse": "Route Nationale, 80600 Mézerolles",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1869416,
+        "lon": 2.2412237
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 4589437613,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire",
+      "adresse": "1 Rue de la Folie, 80140 Rambures",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9411676,
+        "lon": 1.7024804
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 4763796637,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "4 Rue d'Oisemont, 80140 Le Translay",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9683413,
+        "lon": 1.6777571
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 4781276657,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "RPC d'Oisemont",
+      "adresse": "Rue des Quarante, 80140 Oisemont",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9575534,
+        "lon": 1.7661557
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 4791391951,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Saint-Roch B",
+      "adresse": "Rue de la Demi-Lune, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8953428,
+        "lon": 2.2865967
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 5033924670,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Lycée Professionnel Agricole de la Haute-Somme - Site de Ribemont",
+      "adresse": "Ruelle du Château, 80800 Ribemont-sur-Ancre",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9579042,
+        "lon": 2.5646326
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 5653294514,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Jean-Claude Fourquez",
+      "adresse": "Rue d'Escles Saint- Pierre, 80290 Morvillers-Saint-Saturnin",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.761744,
+        "lon": 1.7890777
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 5918230832,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École Saint-Acheul - Saint-Riquier",
+      "adresse": "Chaussée Jules Ferry, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8827023,
+        "lon": 2.3243717
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6179485913,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École Maternelle Sainte-Thérèse",
+      "adresse": "Rue Abladène, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8828627,
+        "lon": 2.3232357
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6179545742,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Lycée général et technologique privé Saint-Riquier",
+      "adresse": "Chaussée Jules Ferry, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8829909,
+        "lon": 2.32556
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6179545765,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle Jean Macé",
+      "adresse": "Rue Jean Macé, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8843922,
+        "lon": 2.3115849
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6181575255,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Collège César Franck",
+      "adresse": "Rue César Franck, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9115915,
+        "lon": 2.3102751
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6218799988,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire privée Saint-Joseph",
+      "adresse": "Rue des Saintes-Claires, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.900482,
+        "lon": 2.2999941
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6292854930,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire privée Saint-Clotilde",
+      "adresse": "Rue Émile Zola, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8900483,
+        "lon": 2.3001597
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6292869029,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire privée Sainte-Thérèse Saint-Acheul",
+      "adresse": "Chaussée Jules Ferry, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8832841,
+        "lon": 2.3240519
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6292882888,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire privée Sainte-Famille",
+      "adresse": "Rue Vascosan, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8867803,
+        "lon": 2.3084799
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6292885586,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire André Bernard",
+      "adresse": "Rue Saint-Fuscien, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8767365,
+        "lon": 2.3060846
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6293088767,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École élémentaire Condorcet",
+      "adresse": "Rue Condorcet, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8756952,
+        "lon": 2.3230017
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6293097206,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École élémentaire Montessori",
+      "adresse": "Rue de Redon, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.868631,
+        "lon": 2.3159816
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6293107950,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle publique Saint-Germain",
+      "adresse": "Passage de l'Aventure, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8979363,
+        "lon": 2.2933326
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 6622348078,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École maternelle Augustin Dujardin",
+      "adresse": "Rue Haleine Ridoux, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.88563,
+        "lon": 2.3326394
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7071714192,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle Emile Lesot",
+      "adresse": "Rue Georges Guynemer, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9096191,
+        "lon": 2.3002829
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7071714193,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École maternelle Jacques Prévert",
+      "adresse": "Rue de Cagny, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8772665,
+        "lon": 2.3265571
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7071714195,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle La Pépinière",
+      "adresse": "Quai de la Somme, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9072458,
+        "lon": 2.2825813
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7071714197,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Les Verrières",
+      "adresse": "Rue Aimé Merchez, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8933053,
+        "lon": 2.288436
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7072268670,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École maternelle Marivaux",
+      "adresse": "Rue Marivaux, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9099776,
+        "lon": 2.3251593
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7072268674,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Michel Ange",
+      "adresse": "Rue Michel-Ange, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9185063,
+        "lon": 2.2970384
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7072268675,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École maternelle Réaumur",
+      "adresse": "Rue Reaumur, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8729637,
+        "lon": 2.3099132
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7072268676,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle Voltaire",
+      "adresse": "Rue Balzac, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9109798,
+        "lon": 2.3169799
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7072349154,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle d'application André Chénier",
+      "adresse": "Rue André Chénier, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8775854,
+        "lon": 2.2881047
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079509739,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "École primaire Albert Schweitzer A",
+      "adresse": "Rue du Docteur Schweitzer, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9097343,
+        "lon": 2.3130046
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079509741,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Albert Schweitzer B",
+      "adresse": "Rue du Docteur Schweitzer, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9097425,
+        "lon": 2.3120784
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079509742,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Emile Lesot Groupe A",
+      "adresse": "Rue Georges Guynemer, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9098462,
+        "lon": 2.2997894
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079509744,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École primaire Émile Lesot Groupe B",
+      "adresse": "Rue Franklin Roosevelt, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9099513,
+        "lon": 2.2989428
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079509745,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École primaire La Vallée",
+      "adresse": "Rue Legrand d'Aussy, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8933629,
+        "lon": 2.3131621
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079509750,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Saint-Maurice B",
+      "adresse": "Rue Cagnard, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.903427,
+        "lon": 2.2872991
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079552651,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire Saint-Pierre",
+      "adresse": "100 Chaussée Saint-Pierre",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9032314,
+        "lon": 2.30652
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079552652,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "Lycée professionnel privé la Providence - Lycée des métiers des énergies nouvelles et du numérique",
+      "adresse": "Boulevard de Saint-Quentin, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8786731,
+        "lon": 2.3012086
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079560245,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "École primaire Les Violettes",
+      "adresse": "Rue Soufflot, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8673553,
+        "lon": 2.3251198
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079562249,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Longpré",
+      "adresse": "Rue des Écoles, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9229113,
+        "lon": 2.2633832
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079562250,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Marivaux",
+      "adresse": "Rue Beaumarchais, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.910616,
+        "lon": 2.3247812
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079562252,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Michel Ange",
+      "adresse": "Rue Michel-Ange, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9186692,
+        "lon": 2.2968875
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079562253,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École primaire Petit Saint-Jean",
+      "adresse": "Rue Molière, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8878573,
+        "lon": 2.262651
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079562254,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire Saint-Germain",
+      "adresse": "Rue Sainte-Catherine, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8974298,
+        "lon": 2.2966527
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7079562255,
+      "osm_type": "node",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Collège Jacques Brel",
+      "adresse": "Rue du 8 Mai 1945, 80800 Villers-Bretonneux",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8658576,
+        "lon": 2.5260761
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 7188923388,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École élémentaire André Mille",
+      "adresse": "Rue Anatole France, 80330 Longueau",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.868998,
+        "lon": 2.3578602
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 9271226107,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue Georges Clemenceau, 80600 Humbercourt",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.2099512,
+        "lon": 2.4548598
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 9316015260,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "Collège privé Sainte-Famille",
+      "adresse": "14 Rue Jules Barni",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8891474,
+        "lon": 2.3091299
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 10303163496,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École Primaire publique",
+      "adresse": "Place du Pré, 80640 Hornoy-le-Bourg",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8461446,
+        "lon": 1.8983279
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 10792177332,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École Louis Pergaud",
+      "adresse": "Rue Louis Leclercq, 80540 Bovelles",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8840219,
+        "lon": 2.1422785
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 11128338611,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue de Presles, 80310 Fourdrinoy",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9176118,
+        "lon": 2.1061539
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 12301909673,
+      "osm_type": "node",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Les Jeunes Pousses",
+      "adresse": "1 Place du Général de Gaulle, 80480 Bacouel-sur-Selle",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8313087,
+        "lon": 2.223579
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 12670688620,
+      "osm_type": "node",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire Saint-Leu",
+      "adresse": "Rue de la Dodane, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.897767,
+        "lon": 2.3045505
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 140138925,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Maternelle",
+      "adresse": "Rue Vivien, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8902315,
+        "lon": 2.2993675
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 140249247,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue Émile Zola, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.890255,
+        "lon": 2.300109
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 140249333,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Lycée général Madeleine Michelis",
+      "adresse": "Rue Vincent Auriol, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.88932,
+        "lon": 2.303575
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 140249348,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Collège privé Sainte-Clotilde",
+      "adresse": "Rue des Jacobins, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8908055,
+        "lon": 2.29983
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 140249350,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire privée La Salle",
+      "adresse": "Rue Ducange, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8855595,
+        "lon": 2.3056435
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 140373889,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École maternelle Louis Prot",
+      "adresse": "Place Louis Prot, 80330 Longueau",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8694275,
+        "lon": 2.357621
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 141095579,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Chemin de Dury, 80480 Vers-sur-Selle",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.840891,
+        "lon": 2.2335075
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 141378717,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire La Sentelette",
+      "adresse": "Rue de la Sentelette",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8186705,
+        "lon": 2.3224615
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 199892329,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue Léon Thuillier, 80650 Vignacourt",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0121743,
+        "lon": 2.199018
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 243227860,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Anne Frank",
+      "adresse": "Rue Léo Ferré, 80330 Longueau",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8725896,
+        "lon": 2.3628639
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 244404001,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Sagebien",
+      "adresse": "Rue Sagebien, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8773069,
+        "lon": 2.2920592
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 245090285,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "Institut d'Education Motrice Autonome de Saint-Exupéry",
+      "adresse": "Rue Sagebien, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8753173,
+        "lon": 2.2918252
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 245090292,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "Collège Sagebien",
+      "adresse": "Rue Alexandre Dumas, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8744305,
+        "lon": 2.2908155
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 245090313,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "Collège Privé La Providence",
+      "adresse": "Chemin du Mont Thomas, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8774839,
+        "lon": 2.2998223
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 245090319,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "8 Rue de l'Église",
+      "code_postal": "80290",
+      "ville": "Croixrault",
+      "coordonnees": {
+        "lat": 49.7907803,
+        "lon": 1.9917219
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 290789587,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue Eugène Létocart, 80850 Berteaucourt-les-Dames",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0467245,
+        "lon": 2.1558945
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 291341271,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue de Latte, 80140 Oisemont",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9556556,
+        "lon": 1.7677901
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 294286166,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Bords de Somme",
+      "adresse": "Avenue du Languedoc, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.917801,
+        "lon": 2.255556
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 302434941,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle André Bernard",
+      "adresse": "Résidence Le Mont Thomas, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8765159,
+        "lon": 2.3073407
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 308745518,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École élémentaire Voltaire",
+      "adresse": "Rue Voltaire, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9112915,
+        "lon": 2.3173321
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 309183539,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Beauvillé",
+      "adresse": "Rue Denis Cordonnier, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9066079,
+        "lon": 2.3194294
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 309183546,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Gustave Charpentier",
+      "adresse": "Boulevard de Roubaix, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9138637,
+        "lon": 2.3103107
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 309211285,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle publique Fafet",
+      "adresse": "Allée de l'Albatros, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9122132,
+        "lon": 2.3159439
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 309211321,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Pigeonnier",
+      "adresse": "Rue Winston Churchill, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.909656,
+        "lon": 2.3050525
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 309378373,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École primaire Pigeonnier",
+      "adresse": "Rue Winston Churchill, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9104744,
+        "lon": 2.3054756
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 309378384,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École maternelle d'application Delpech",
+      "adresse": "Rue Delpech, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.880624,
+        "lon": 2.2939751
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 312779927,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord"
+    },
+    {
+      "nom": "École privée Saint-Martin",
+      "adresse": "Rue Jeanne d'Arc, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8845751,
+        "lon": 2.2935421
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 312779930,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue de l'Église, 80140 Andainville",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8920932,
+        "lon": 1.7859137
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 320975254,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "Centre de Formation d'Apprentis du Bâtiment",
+      "adresse": "Allée de Beaulieu, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8758448,
+        "lon": 2.3155957
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 325282711,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Collège Jules Verne",
+      "adresse": "Rue Jules Verne, 80136 Rivery",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9046482,
+        "lon": 2.3238414
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 328216866,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "Collège Maréchal Leclerc",
+      "adresse": "Rue Arthur Lefèvre",
+      "code_postal": "80430",
+      "ville": "Beaucamps-le-Vieux",
+      "coordonnees": {
+        "lat": 49.8408941,
+        "lon": 1.7855144
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 332945700,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "Collège Rosa Parks",
+      "adresse": "Avenue du Languedoc, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9180405,
+        "lon": 2.2522293
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 376095297,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Saint-Maurice",
+      "adresse": "Rue Turgot, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9034145,
+        "lon": 2.287569
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 376107862,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire Saint-Maurice A",
+      "adresse": "Rue Saint-Maurice, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.903481,
+        "lon": 2.2904406
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 376107865,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Collège Édouard Lucas",
+      "adresse": "Rue Robert le Coq, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8989743,
+        "lon": 2.2686217
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 377012449,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Collège Eugène Lefebvre",
+      "adresse": "2 Boulevard Camille Roland",
+      "code_postal": "80800",
+      "ville": "Corbie",
+      "coordonnees": {
+        "lat": 49.9124733,
+        "lon": 2.5086249
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 399059680,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Ducellier",
+      "adresse": "Rue de l'Église, 80600 Lucheux",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.196288,
+        "lon": 2.4064885
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 401957562,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "Amiens State School",
+      "adresse": "Amiens Road",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": -28.5952823,
+        "lon": 151.8120545
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 405058045,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Noyon",
+      "adresse": "Rue du Blamont, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8876325,
+        "lon": 2.310537
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 423585620,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire",
+      "adresse": "Rue Jules Ferry, 80140 Oisemont",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9554986,
+        "lon": 1.7667154
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 485882133,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Collège Charles Bignon",
+      "adresse": "Rue Jean Jaurès, 80140 Oisemont",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9564025,
+        "lon": 1.7707183
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 485882138,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire privée Saint-Joseph Saint-Martin",
+      "adresse": "Rue Roger Salengro, 80140 Oisemont",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9562598,
+        "lon": 1.762545
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 485884228,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Collège Arthur Rimbaud",
+      "adresse": "Rue Ingres, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.91217,
+        "lon": 2.2999765
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 489049976,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "Collège Jules Ferry",
+      "adresse": "Avenue Claude Jeunemaitre, 80160 Conty",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.7353014,
+        "lon": 2.1485634
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 491563557,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "Collège du Bois l'Eau",
+      "adresse": "Rue de Ribeaucourt, 80370 Bernaville",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1297309,
+        "lon": 2.1569182
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 520513432,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Lycée professionnel Romain Rolland",
+      "adresse": "Rue Romain Rolland, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9159243,
+        "lon": 2.3000652
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 568186971,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École maternelle La Vallée",
+      "adresse": "Rue de Mareuil, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8932832,
+        "lon": 2.313422
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 577810802,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Groupe scolaire",
+      "adresse": "Rue Cagnon, 80600 Beauquesne",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0856503,
+        "lon": 2.3917666
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 639148502,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "Lycée général et technologique Jean Baptiste Delambre",
+      "adresse": "Rue Montaigne, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9124315,
+        "lon": 2.3206628
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 653936071,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "Collège Jean-Marc Laurent",
+      "adresse": "Rue Frédéric Mistral, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8703016,
+        "lon": 2.3130251
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 654683432,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Lycée Professionnel de l'Acheuléen",
+      "adresse": "Résidence du Prince Noir, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.880626,
+        "lon": 2.3258629
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 660022800,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Collège privé Saint-Jean-Baptiste de La Salle",
+      "adresse": "Rue Ducange, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8852021,
+        "lon": 2.30545
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 660224982,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire Albert Roze",
+      "adresse": "Rue Paul Bert, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8840545,
+        "lon": 2.3111718
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 660236487,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue Neuve, 80290 Équennes-Éramecourt",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.7351654,
+        "lon": 1.9597231
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 660256770,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École maternelle et élémentaire publique",
+      "adresse": "Rue Roger Delval, 80620 Domart-en-Ponthieu",
+      "code_postal": "80620",
+      "ville": "Domart-en-Ponthieu",
+      "coordonnees": {
+        "lat": 50.0722993,
+        "lon": 2.1223053
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 663462993,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Lavarenne",
+      "adresse": "Rue des Tilleuls, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1564064,
+        "lon": 2.3347207
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 665419177,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École Élémentaire Elbeuf",
+      "adresse": "Rue Louis Antoine de Saint-Just, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8894815,
+        "lon": 2.2757137
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 668283675,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École maternelle Elbeuf",
+      "adresse": "Rue Louis Antoine de Saint-Just, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8888455,
+        "lon": 2.2756654
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 668283684,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "Lycée polyvalent de l'Authie",
+      "adresse": "Rue du Bois de Sapins, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1501349,
+        "lon": 2.3558763
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 676654010,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Léo Lagrange",
+      "adresse": "Rue Massenet, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.910897,
+        "lon": 2.3140986
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 894332923,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "Lycée général et technologique privé Montalembert",
+      "adresse": "Boulevard de l'Est, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1533892,
+        "lon": 2.3413388
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 897211030,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire privée Jeanne d'Arc",
+      "adresse": "Rue Jacques Mossion, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1545253,
+        "lon": 2.3441576
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 897211031,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Jean-François Lesueur",
+      "adresse": "Rue Dupuis, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8948496,
+        "lon": 2.3047775
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 898337001,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École élémentaire La Neuville",
+      "adresse": "Rue Saint-Acheul, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8845454,
+        "lon": 2.329781
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 899169068,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École communale",
+      "adresse": "Rue de Guignemicourt, 80470 Ferrières",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.89029,
+        "lon": 2.1765034
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 900322341,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "Lycée polyvalent La Hotoie",
+      "adresse": "Avenue de l'Hippodrome, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8971832,
+        "lon": 2.2745445
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 901565012,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "collège Amiral Lejeune",
+      "adresse": "Rue Fred Moore, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8924495,
+        "lon": 2.2913925
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 901572132,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École élémentaire Camille Claudel",
+      "adresse": "Rue de Cagny, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8684864,
+        "lon": 2.3357795
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 904106543,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Collège Auguste Janvier",
+      "adresse": "Rue de Cottenchy, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8870085,
+        "lon": 2.3141457
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 904722506,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Lycée professionnel privé Sacré-Coeur",
+      "adresse": "Rue des Augustins, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8935351,
+        "lon": 2.3057139
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 933310991,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École primaire Renancourt",
+      "adresse": "Rue des Verdiers, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8961798,
+        "lon": 2.2600466
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 951471615,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle La Rotonde",
+      "adresse": "Rue du 60ème RI",
+      "code_postal": "80470",
+      "ville": "Ailly-sur-Somme",
+      "coordonnees": {
+        "lat": 49.9271279,
+        "lon": 2.1946277
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 962837242,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École élémentaire Aimé Merchez",
+      "adresse": "Rue Émile Bouté",
+      "code_postal": "80470",
+      "ville": "Ailly-sur-Somme",
+      "coordonnees": {
+        "lat": 49.927165,
+        "lon": 2.1966111
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 962837243,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Collège du Val de Somme",
+      "adresse": "Rue d'Airaines",
+      "code_postal": "80470",
+      "ville": "Ailly-sur-Somme",
+      "coordonnees": {
+        "lat": 49.9235582,
+        "lon": 2.1952863
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 962837244,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Edmond Marquis",
+      "adresse": "Rue du Chevalier Labarre, 80450 Camon",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8867996,
+        "lon": 2.3463679
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 988818211,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "Collège du Val de Nièvre",
+      "adresse": "Rue de Thionville, 80620 Domart-en-Ponthieu",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0768168,
+        "lon": 2.1220273
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 991633074,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Jules Verne",
+      "adresse": "Rue du Général Leclerc, 80750 Fienvillers",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1182345,
+        "lon": 2.2284517
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 992027435,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue du Général Leclerc, 80270 Warlus",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9239775,
+        "lon": 1.945432
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 998971538,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue de l'Église, 80310 Belloy-sur-Somme",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.965635,
+        "lon": 2.1352555
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1000882345,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Louis Balédent-Marcel Martin",
+      "adresse": "Rue Louis Balédent",
+      "code_postal": "80330",
+      "ville": "Cagny",
+      "coordonnees": {
+        "lat": 49.8616106,
+        "lon": 2.3440149
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1000917654,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Louis Balédent-Marcel Martin",
+      "adresse": "Rue Louis Balédent",
+      "code_postal": "80330",
+      "ville": "Cagny",
+      "coordonnees": {
+        "lat": 49.8610554,
+        "lon": 2.3441517
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1000918522,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École maternelle et primaire",
+      "adresse": "Chemin du Tour des Haies, 80290 Namps-Maisnil",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8059533,
+        "lon": 2.1044746
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1001770945,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue Léon Thuillier, 80650 Vignacourt",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0119754,
+        "lon": 2.199039
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1021449260,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Collège Jean Rostand",
+      "adresse": "Rue de la Bassée, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.155429,
+        "lon": 2.3343561
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1106539282,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École élémentaire Les Tilleuls Etienne Marchand",
+      "adresse": "Rue des Tilleuls, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1563203,
+        "lon": 2.3356068
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1106539283,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "Collège Montalembert",
+      "adresse": "Route d'Amiens, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1535317,
+        "lon": 2.3384656
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1106545383,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École Maternelle Tivoli",
+      "adresse": "Résidence Tivoli, 80600 Doullens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1585726,
+        "lon": 2.3485884
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1106545387,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Georges Brassens",
+      "adresse": "Rue de Touraine, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9134639,
+        "lon": 2.2495387
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1113637045,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Léon Lamotte",
+      "adresse": "Rue de Lorraine, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9151282,
+        "lon": 2.2512721
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1113637046,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Georges Quarante",
+      "adresse": "Rue d'Étouvie, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9138042,
+        "lon": 2.2555588
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1113637047,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Georges Quarante",
+      "adresse": "Rue d'Étouvie, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9133724,
+        "lon": 2.255804
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1113637048,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École maternelle Louise Michel",
+      "adresse": "Avenue Jules Vallès, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9163246,
+        "lon": 2.2487217
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1113637050,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Louise Michel",
+      "adresse": "Avenue du Languedoc, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9164528,
+        "lon": 2.2498417
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1113637051,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "Groupe Scolaire Jules Ferry",
+      "adresse": "Rue Jean Mermoz, 80470 Dreuil-lès-Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9130634,
+        "lon": 2.2323768
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1113637056,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École primaire Les Samares",
+      "adresse": "Rue Benjamin d'Hardivillers, 80290 Poix-de-Picardie",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.774957,
+        "lon": 1.985589
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1187847240,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire Les Primevères",
+      "adresse": "Rue du Docteur Barbier, 80290 Poix-de-Picardie",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.7759031,
+        "lon": 1.9848803
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1187847241,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École maternelle Le Petit Bois",
+      "adresse": "Avenue du Général Leclerc, 80290 Poix-de-Picardie",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.7754336,
+        "lon": 1.9860444
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1187847242,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École Paul Langevin",
+      "adresse": "Rue Paul Langevin, 80450 Camon",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8950749,
+        "lon": 2.3411324
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1249492134,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École élémentaire",
+      "adresse": "14 Place de la Mairie",
+      "code_postal": "80290",
+      "ville": "Lignières-Châtelain",
+      "coordonnees": {
+        "lat": 49.7754607,
+        "lon": 1.8641512
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1257762284,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École Primaire Pierre et Marie Curie",
+      "adresse": "Allée des Colibris, 80480 Pont-de-Metz",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8845457,
+        "lon": 2.2424387
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1263468751,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire privée Sainte-Jeanne d'Arc",
+      "adresse": "Rue Caroline Follet, 80160 Conty",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.7414419,
+        "lon": 2.1505254
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1265498439,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École élémentaire",
+      "adresse": "Place Publique, 80800 Vaire-sous-Corbie",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9145305,
+        "lon": 2.546975
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1266497262,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": "Rue Reaumur, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8727582,
+        "lon": 2.3095684
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1307417757,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École Primaire Philippe Bovin",
+      "adresse": "Rue Paul Langevin, 80260 Poulainville",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9475781,
+        "lon": 2.3136337
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1391851629,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Le Soleil",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9091084,
+        "lon": 2.2970496
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1416911698,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École maternelle Rosa Bonheur",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8690736,
+        "lon": 2.3360458
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424405401,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École Élémentaire du Valençon",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.109499,
+        "lon": 2.3279281
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424406618,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Jean Jaurès",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.88652,
+        "lon": 2.3465747
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424407914,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Michel Petrucciani",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9088789,
+        "lon": 2.5002308
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424408667,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.899624,
+        "lon": 2.504238
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424409762,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Dominique de Saint-Mars",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9808048,
+        "lon": 2.0649888
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424411746,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.888911,
+        "lon": 1.7192735
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424414418,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École Primaire La Plaine du Moulin",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.1662895,
+        "lon": 2.0957583
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424423002,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 50.0563059,
+        "lon": 2.2176332
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424445002,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8150842,
+        "lon": 2.2180171
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424467717,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8686409,
+        "lon": 2.1730292
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424475164,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "École primaire Arthur Clifford Stribling",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8802555,
+        "lon": 2.4238666
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424527476,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Est"
+    },
+    {
+      "nom": "École primaire Les Quatre Saisons",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9552606,
+        "lon": 2.5394163
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424527725,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École Élémentaire de Hamelet",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9064551,
+        "lon": 2.5294585
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424527857,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École maternelle Françoise Dolto",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9092548,
+        "lon": 2.500083
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424527983,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8994925,
+        "lon": 2.4498657
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1424528842,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École élémentaire Jeanne Arnaud et Jean Cayeux",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9005852,
+        "lon": 2.3209118
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1426074258,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École sans nom",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8840787,
+        "lon": 2.0178213
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1426166411,
+      "osm_type": "way",
+      "secteur_approximatif": "Nord-Ouest"
+    },
+    {
+      "nom": "Collège privé Sainte-Famille - Saint-Pierre",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9061687,
+        "lon": 2.3074939
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1426227780,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire privée Notre-Dame du Bon Conseil",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9066992,
+        "lon": 2.306852
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1426227781,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Est"
+    },
+    {
+      "nom": "École primaire Jules Verne",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9087127,
+        "lon": 2.2591714
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1429045110,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud-Ouest"
+    },
+    {
+      "nom": "École élémentaire Saint-Roch A",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8948886,
+        "lon": 2.2864525
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1430024167,
+      "osm_type": "way",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "École maternelle La Paix",
+      "adresse": "8 Avenue de la Paix, 80000 Amiens",
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.9113897,
+        "lon": 2.298112
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1432378854,
+      "osm_type": "way",
+      "secteur_approximatif": "Sud"
+    },
+    {
+      "nom": "École maternelle Saint-Leu",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8978475,
+        "lon": 2.3038445
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 1903283,
+      "osm_type": "relation",
+      "secteur_approximatif": "Centre"
+    },
+    {
+      "nom": "Cité Scolaire Amiens Sud",
+      "adresse": null,
+      "code_postal": "80000",
+      "ville": "Amiens",
+      "coordonnees": {
+        "lat": 49.8749352,
+        "lon": 2.296445
+      },
+      "type": "school",
+      "niveau": null,
+      "osm_id": 11726217,
+      "osm_type": "relation",
+      "secteur_approximatif": "Nord"
+    }
+  ]
+}
