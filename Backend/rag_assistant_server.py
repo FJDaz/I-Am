@@ -1247,6 +1247,11 @@ def rag_assistant_endpoint(payload: AssistantRequest):
       cached_result = cache.get(cache_key)
       if cached_result is not None:
         print(f"[CACHE HIT] Question: {cache_key[:50]}...")
+        # IMPORTANT: Nettoyer les segments même dans les réponses en cache
+        if "answer_html" in cached_result:
+          cached_result["answer_html"] = clean_segment_references(cached_result["answer_html"])
+        if "alignment" in cached_result and "summary" in cached_result["alignment"]:
+          cached_result["alignment"]["summary"] = clean_segment_references(cached_result["alignment"]["summary"])
         return AssistantResponse(**cached_result)
     
     lexicon_matches = match_lexicon_entries(payload.question, payload.normalized_question)
