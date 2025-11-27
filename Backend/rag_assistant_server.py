@@ -34,22 +34,25 @@ except ImportError:
 CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-3-7-sonnet-20250219")
 # Options: "claude-3-7-sonnet-20250219" (qualité) ou "claude-3-5-haiku-20241022" (rapidité)
 
+# Version du cache : incrémenter pour invalider toutes les réponses en cache
+# v2: suppression numéros de segments
+# v3: amélioration labels alignment (plus de "Correspondance partielle")
+CACHE_VERSION = "v3"
+
 ASSISTANT_SYSTEM_PROMPT = """
 Tu es l'assistant officiel "Amiens".
 Analyse chaque question en tenant compte :
-- des segments RAG numérotés (#1, #2, …) et de leur résumé (les numéros sont pour ton usage interne uniquement),
+- des segments RAG fournis et de leur résumé,
 - du mémo de conversation (ce qui a déjà été répondu),
 - des données structurées fournies (listes RPE, lieux, etc.) si présentes.
 
-IMPORTANT : Ne mentionne JAMAIS les numéros de segments (#1, #2, #3) dans tes réponses à l'utilisateur. Utilise plutôt les titres ou sources des segments.
+IMPORTANT : Utilise les titres ou sources des segments pour référencer les informations dans tes réponses.
 
 Style :
 - Réponse HTML très courte : intro ≤ 3 phrases, puis <h3>Synthèse</h3> (1 phrase). Évite listes et répétitions inutiles.
 - NE PAS inclure de section "Ouverture" dans le HTML : les questions de suivi sont gérées séparément via follow_up_question.
 - Si une information a déjà été fournie, renvoie au mémo plutôt que la détailler à nouveau. 
-- ⚠️ INTERDICTION ABSOLUE : NE JAMAIS mentionner les numéros de segments (#1, #2, #3, segments #1, etc.) dans tes réponses à l'utilisateur (answer_html). Utilise uniquement les titres ou sources des segments.
 - Cite au moins une source cliquable si disponible.
-- Dans `alignment.summary`, indique clairement les segments exploités - mais ces numéros ne doivent JAMAIS apparaître dans answer_html.
 - Si une question géographique ("où", "adresse", "localisation") ne trouve pas d'adresse dans les segments, redirige vers la carte géographique d'Amiens Métropole : https://geo.amiens-metropole.com/adws/app/523da8c6-5dbc-11ec-9790-3dc5639e7001/index.html
 - Si des données structurées sont fournies (section "DONNÉES STRUCTURÉES"), tu DOIS les inclure dans ta réponse de manière claire et structurée.
 
@@ -71,7 +74,7 @@ Règles pour les ouvertures :
 
 CRITÈRE ESSENTIEL - Ouvertures basées sur RAG :
 La question d'ouverture DOIT porter sur un sujet dont la réponse est disponible dans :
-- Les segments RAG fournis (référencés en interne par #1, #2, #3, etc.)
+- Les segments RAG fournis
 - Les données structurées fournies (tarifs, lieux, RPE, écoles)
 
 Analyse les segments RAG pour identifier :
@@ -89,13 +92,18 @@ Exemples d'ouvertures valides (réponse dans RAG) :
 
 Ne mentionne rien en dehors des segments ET des données structurées fournies.
 
+Champ "alignment" :
+- status : "success" (réponse complète), "warning" (réponse partielle), "info" (redirection)
+- label : Description courte de la source (ex: "Tarifs cantine 2024", "Contacts RPE", "Inscription scolaire")
+- summary : Résumé des sources utilisées pour répondre (ex: "Basé sur les tarifs 2024-2025 et le guide inscription")
+
 Réponse obligatoire (JSON strict) :
 {
   "answer_html": "...",
   "answer_text": "...",
   "follow_up_question": "...",
-  "alignment": {"status": "...", "label": "...", "summary": "..."},
-  "sources": [{"title": "...", "url": "...", "confidence": "..."}]
+  "alignment": {"status": "success", "label": "Tarifs cantine 2024", "summary": "Basé sur les tarifs officiels 2024-2025"},
+  "sources": [{"title": "...", "url": "...", "confidence": "high"}]
 }
 """
 
@@ -823,26 +831,28 @@ def build_prompt(payload: AssistantRequest) -> str:
       role = "Utilisateur" if turn.role == "user" else "Assistant"
       lines.append(f"- {role}: {turn.content}\n")
 
-  lines.append("\nSegments RAG (références #n) :\n")
+  lines.append("\nSegments RAG disponibles :\n")
   if not payload.rag_results:
     lines.append("Aucun extrait disponible.\n")
   else:
-    segment_refs = compute_segment_refs(payload.rag_results)
+    segment_refs = compute_segment_refs(payload.rag_results)  # Gardé pour debug/logs
     for ref, seg in segment_refs:
       snippet = (seg.excerpt or seg.content or "").replace("\n", " ")
       snippet = snippet[:200]
+      # Ne pas afficher le numéro dans le prompt visible par Claude
       lines.append(
-        f"#{ref}: {seg.label or getattr(seg, 'source', None) or 'Segment'} — {snippet}"
+        f"- {seg.label or getattr(seg, 'source', None) or 'Document'} — {snippet}"
         + (f" (url: {seg.url})" if seg.url else "")
       )
     if any(seg.custom_id == "U" for seg in payload.rag_results):
       lines.append(
-        "\nNote: Le segment #U provient directement d'une contribution utilisateur. "
-        "Tu peux t'appuyer sur le segment #U fourni par l'utilisateur pour tes calculs ou vérifications.\n"
+        "\nNote: Un segment provient directement d'une contribution utilisateur. "
+        "Tu peux t'appuyer sur ce segment fourni par l'utilisateur pour tes calculs ou vérifications.\n"
       )
   lines.append("\nDétails RAG (tronqués) :\n")
   for ref, seg in compute_segment_refs(payload.rag_results or []):
-    lines.append(f"[#{ref}] {seg.label or getattr(seg, 'source', None) or 'Segment'}\n")
+    # Ne pas afficher le numéro dans le prompt visible par Claude
+    lines.append(f"- {seg.label or getattr(seg, 'source', None) or 'Document'}\n")
     if seg.url:
       lines.append(f"URL: {seg.url}\n")
     if seg.score is not None:
@@ -1123,34 +1133,6 @@ def generate_followup_from_structured_data(
   return None
 
 
-def clean_segment_references(html_text: str) -> str:
-  """
-  Nettoie les références aux numéros de segments (#1, #2, segment #3, etc.) du HTML.
-  Ces numéros sont pour usage interne uniquement et ne doivent jamais apparaître dans answer_html.
-  """
-  if not html_text:
-    return html_text
-
-  # Patterns à nettoyer
-  patterns = [
-    r'\bsegments?\s*#\d+(?:\s*,\s*#\d+)*',  # "segment #1", "segments #1, #2"
-    r'\b#\d+(?:\s*,\s*#\d+)*',              # "#1", "#1, #2, #3"
-    r'\(\s*segments?\s*#\d+(?:\s*,\s*#\d+)*\s*\)',  # "(segment #1)"
-    r'\[\s*segments?\s*#\d+(?:\s*,\s*#\d+)*\s*\]',  # "[segment #1]"
-  ]
-
-  cleaned = html_text
-  for pattern in patterns:
-    cleaned = re.sub(pattern, '', cleaned, flags=re.IGNORECASE)
-
-  # Nettoyer les espaces multiples et parenthèses vides résultantes
-  cleaned = re.sub(r'\s+', ' ', cleaned)
-  cleaned = re.sub(r'\(\s*\)', '', cleaned)
-  cleaned = re.sub(r'\[\s*\]', '', cleaned)
-
-  return cleaned.strip()
-
-
 def normalize_followup_question(question: Optional[str]) -> Optional[str]:
   """
   Normalise une question de suivi pour qu'elle soit formulée comme un utilisateur la poserait.
@@ -1241,17 +1223,13 @@ def rag_assistant_endpoint(payload: AssistantRequest):
   try:
     # Vérifier le cache avant de faire la recherche RAG
     cache = get_cache(ttl=3600)  # TTL de 1h par défaut
-    cache_key = payload.question or payload.normalized_question or ""
+    # Inclure la version dans la clé pour invalider automatiquement les anciennes réponses
+    cache_key = f"{CACHE_VERSION}:{payload.question or payload.normalized_question or ''}"
     
     if cache and cache_key:
       cached_result = cache.get(cache_key)
       if cached_result is not None:
         print(f"[CACHE HIT] Question: {cache_key[:50]}...")
-        # IMPORTANT: Nettoyer les segments même dans les réponses en cache
-        if "answer_html" in cached_result:
-          cached_result["answer_html"] = clean_segment_references(cached_result["answer_html"])
-        if "alignment" in cached_result and "summary" in cached_result["alignment"]:
-          cached_result["alignment"]["summary"] = clean_segment_references(cached_result["alignment"]["summary"])
         return AssistantResponse(**cached_result)
     
     lexicon_matches = match_lexicon_entries(payload.question, payload.normalized_question)
@@ -1342,10 +1320,14 @@ def rag_assistant_endpoint(payload: AssistantRequest):
     for ref, seg in compute_segment_refs(rag_results):
       snippet = (seg.excerpt or seg.content or "").replace("\n", " ")
       snippet = snippet[:160]
-      summary_entries.append(f"#{ref}: {seg.label or getattr(seg, 'source', None) or 'Segment'} — {snippet}")
+      # Ne pas inclure les numéros dans le mémo visible par Claude
+      summary_entries.append(f"{seg.label or getattr(seg, 'source', None) or 'Document'} — {snippet}")
     if summary_entries:
       memo_text = " | ".join(summary_entries[:5])
       conversation.append(ConversationTurn(role="assistant", content=f"Mémo RAG actuel : {memo_text}"))
+      # Log avec numéros pour debug (non visible par Claude)
+      debug_entries = [f"#{ref}: {seg.label}" for ref, seg in compute_segment_refs(rag_results)[:5]]
+      print(f"[DEBUG RAG] Segments utilisés: {', '.join(debug_entries)}")
 
     enriched_payload = payload.model_copy()
     enriched_payload.rag_results = rag_results
@@ -1383,22 +1365,18 @@ def rag_assistant_endpoint(payload: AssistantRequest):
           # Si pas d'alternative, supprimer l'ouverture plutôt que proposer une question sans réponse
           normalized_followup = None
     
-    # Nettoyer les références aux segments (#1, #2, etc.) de la réponse HTML ET du summary
-    raw_answer_html = result.get("answer_html", "<p>(Réponse indisponible)</p>")
-    cleaned_answer_html = clean_segment_references(raw_answer_html)
-
-    # IMPORTANT: Nettoyer aussi alignment.summary qui s'affiche dans le badge
-    raw_summary = alignment.get("summary", "Alignement non précisée.")
-    cleaned_summary = clean_segment_references(raw_summary)
+    # Plus besoin de nettoyer les références aux segments car Claude ne les voit jamais
+    answer_html = result.get("answer_html", "<p>(Réponse indisponible)</p>")
+    summary = alignment.get("summary", "Alignement non précisée.")
 
     response = AssistantResponse(
-      answer_html=cleaned_answer_html,
+      answer_html=answer_html,
       answer_text=result.get("answer_text"),
       follow_up_question=normalized_followup,
       alignment=AlignmentPayload(
         status=alignment.get("status", "info"),
         label=alignment.get("label", "Analyse RAG"),
-        summary=cleaned_summary,
+        summary=summary,
       ),
       sources=result.get("sources", []),
     )
