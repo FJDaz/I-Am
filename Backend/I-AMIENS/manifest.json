@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "I-Amiens",
+  "description": "Assistant RAG + modèle cloud pour la rubrique enfance du site amiens.fr.",
+  "version": "0.2.0",
+  "icons": {
+    "16": "statics/img/IAM_logo.png",
+    "48": "statics/img/IAM_logo.png",
+    "128": "statics/img/IAM_logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amiens.fr/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/corpus_segments.json",
+        "data/lexique_enfance.json",
+        "data/questions_usager.json",
+        "statics/img/IAM_logo.png"
+      ],
+      "matches": [
+        "https://www.amiens.fr/*"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://i-am-production.up.railway.app/*"
+  ]
+}
+
