@@ -1,0 +1,68 @@
+{
+  "sections": [
+    {
+      "name": "Enfance",
+      "base_url": "https://www.amiens.fr/Vivre-a-Amiens/Enfance",
+      "pattern": "/Enfance",
+      "categories": ["tarifs", "centres_loisirs", "inscriptions", "menus", "rpe", "periscolaire"],
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "Jeunesse",
+      "base_url": "https://www.amiens.fr/Vivre-a-Amiens/Jeunesse",
+      "pattern": "/Jeunesse",
+      "categories": ["activites", "inscriptions", "tarifs", "lieux"],
+      "enabled": true,
+      "priority": 2
+    },
+    {
+      "name": "Culture",
+      "base_url": "https://www.amiens.fr/Vivre-a-Amiens/Culture",
+      "pattern": "/Culture",
+      "categories": ["evenements", "lieux", "reservations", "expositions"],
+      "enabled": false,
+      "priority": 3
+    },
+    {
+      "name": "Sport",
+      "base_url": "https://www.amiens.fr/Vivre-a-Amiens/Sport",
+      "pattern": "/Sport",
+      "categories": ["equipements", "inscriptions", "tarifs", "activites"],
+      "enabled": false,
+      "priority": 4
+    },
+    {
+      "name": "Vie Associative",
+      "base_url": "https://www.amiens.fr/Vivre-a-Amiens/Vie-Associative",
+      "pattern": "/Vie-Associative",
+      "categories": ["associations", "subventions", "aides"],
+      "enabled": false,
+      "priority": 5
+    },
+    {
+      "name": "Urbanisme",
+      "base_url": "https://www.amiens.fr/Vivre-a-Amiens/Urbanisme",
+      "pattern": "/Urbanisme",
+      "categories": ["permis", "reglementation", "projets"],
+      "enabled": false,
+      "priority": 6
+    },
+    {
+      "name": "Transport",
+      "base_url": "https://www.amiens.fr/Vivre-a-Amiens/Transport",
+      "pattern": "/Transport",
+      "categories": ["bus", "velo", "parking", "tarifs"],
+      "enabled": false,
+      "priority": 7
+    }
+  ],
+  "settings": {
+    "max_pages_per_section": 200,
+    "delay_between_requests": 1.0,
+    "respect_robots_txt": true,
+    "use_sitemap": true,
+    "use_dynamic_scraping": false
+  }
+}
+

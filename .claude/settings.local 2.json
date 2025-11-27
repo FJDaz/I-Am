@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python rag_assistant_server.py:*)",
+      "Bash(source .venv/bin/activate)",
+      "Bash(git log:*)",
+      "Bash(python test_stemmer_search.py:*)",
+      "Bash(python -c:*)",
+      "Bash(cat:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "Bash(pip install:*)",
+      "Bash(python extract_pdfs.py:*)",
+      "Bash(python build_corpus_segments.py:*)",
+      "Bash(python embed_corpus.py:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

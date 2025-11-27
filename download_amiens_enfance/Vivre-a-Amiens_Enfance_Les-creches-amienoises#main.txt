@@ -1,8 +1,0 @@
-
-URL: https://www.amiens.fr/Vivre-a-Amiens/Enfance/Les-creches-amienoises#main
-
-Tables: []
-Display:none: []
-Aria-hidden: ['Ecoutez']
-Voir+: []
-PDFs: ['https://www.amiens.fr/var/ez_website/storage/original/application/69f057639752af695b1c3a8c5d64c0dd.pdf']

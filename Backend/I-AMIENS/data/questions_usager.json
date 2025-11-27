@@ -1,0 +1,175 @@
+{
+  "questions": [
+    {
+      "id": "tarifs_centre_loisirs",
+      "intent": "tarifs",
+      "canonical": "Quels sont les tarifs du centre de loisirs ?",
+      "sms": "c koi le tarif du centre 2 loisir ?",
+      "variants": [
+        "C'est combien pour le centre de loisirs ?",
+        "c comb1 pr le centre ?"
+      ]
+    },
+    {
+      "id": "tarifs_mercredi",
+      "intent": "tarifs",
+      "canonical": "Combien coûte l'accueil du mercredi ?",
+      "sms": "le mercredi c cb ?",
+      "variants": [
+        "Tarifs accueil du mercredi ?",
+        "c koi le prix pr mercredi ?"
+      ]
+    },
+    {
+      "id": "prix_cantine",
+      "intent": "tarifs",
+      "canonical": "Quel est le prix de la cantine scolaire ?",
+      "sms": "prix cantine stp ?",
+      "variants": [
+        "C'est combien la cantine ?",
+        "c comb1 la cantine ?"
+      ]
+    },
+    {
+      "id": "inscription_periscolaire",
+      "intent": "planification",
+      "canonical": "Comment inscrire mon enfant au périscolaire ?",
+      "sms": "g f1 comment pr inscrire mon enfant au perisco ?",
+      "variants": [
+        "Procédure inscription périscolaire ?",
+        "comment on sinscri pr le perisco ?"
+      ]
+    },
+    {
+      "id": "documents_inscription",
+      "intent": "documents",
+      "canonical": "Quels documents fournir pour l'inscription ?",
+      "sms": "faut koi comme paper pr sinscrir ?",
+      "variants": [
+        "Pièces justificatives pour inscrire mon enfant ?",
+        "doc a donner pr inscription ?"
+      ]
+    },
+    {
+      "id": "calcul_qfi",
+      "intent": "tarifs",
+      "canonical": "Comment calculer mon QFI ?",
+      "sms": "on fait comment pr le qfi ?",
+      "variants": [
+        "Où calculer le quotient familial individuel ?",
+        "c ou quon fait le qfi ?"
+      ]
+    },
+    {
+      "id": "horaires_garderie",
+      "intent": "action",
+      "canonical": "Quels sont les horaires de la garderie du soir ?",
+      "sms": "horaires garderie soir svp ?",
+      "variants": [
+        "Garderie du soir : fermeture ?",
+        "la garderie elle ferme qd ?"
+      ]
+    },
+    {
+      "id": "adresse_centre",
+      "intent": "adresse",
+      "canonical": "Où se trouve le centre de loisirs Ferme de Grâce ?",
+      "sms": "c ou le centre ferme de grace ?",
+      "variants": [
+        "Adresse du centre Ferme de Grâce ?",
+        "jvai ou pr le centre ferme de grace ?"
+      ]
+    },
+    {
+      "id": "contact_information",
+      "intent": "action",
+      "canonical": "Quel est le numéro du Centre d'Information ?",
+      "sms": "tel du centre info svp ?",
+      "variants": [
+        "Téléphone pour joindre le centre d'information enfance ?",
+        "jpeu avoir le num du centre info ?"
+      ]
+    },
+    {
+      "id": "capacite_centres",
+      "intent": "organisation",
+      "canonical": "Combien de places dans les centres de loisirs cet été ?",
+      "sms": "ya cb de places pr les centres ete ?",
+      "variants": [
+        "Capacité des centres de loisirs en été ?",
+        "c bn complet les centres ete ?"
+      ]
+    },
+    {
+      "id": "vacances_acceuil",
+      "intent": "anticipation",
+      "canonical": "Y a-t-il un accueil pendant les vacances scolaires ?",
+      "sms": "ya un accueil pdt les vacs ?",
+      "variants": [
+        "Accueil vacances scolaires disponible ?",
+        "pendant les vacs on peut garder les enfants ?"
+      ]
+    },
+    {
+      "id": "repas_allergies",
+      "intent": "repas",
+      "canonical": "Comment signaler une allergie pour la cantine ?",
+      "sms": "ma fille est alrgik faut dire comment pr la cantine ?",
+      "variants": [
+        "Procédure allergie cantine ?",
+        "je dois prevenir kien allergie cantine ?"
+      ]
+    },
+    {
+      "id": "urgence_garde",
+      "intent": "urgence",
+      "canonical": "Existe-t-il un accueil d'urgence pour mon enfant ?",
+      "sms": "ya un accueil urgnce pr mon pti ?",
+      "variants": [
+        "Mode d’accueil d’urgence disponible ?",
+        "c possible garde urgence enfant ?"
+      ]
+    },
+    {
+      "id": "transport_centre",
+      "intent": "transport",
+      "canonical": "Y a-t-il une navette pour le centre de loisirs ?",
+      "sms": "navette pr le centre y en a1 ?",
+      "variants": [
+        "Transport scolaire vers le centre de loisirs ?",
+        "on a un bus pr centre loisirs ?"
+      ]
+    },
+    {
+      "id": "liste_attente_creche",
+      "intent": "organisation",
+      "canonical": "Comment fonctionne la liste d’attente des crèches ?",
+      "sms": "liste dattente creche ca marche comment ?",
+      "variants": [
+        "Délais liste d’attente crèche ?",
+        "on attend comb1 pr une place creche ?"
+      ]
+    },
+    {
+      "id": "centre_sms_incomplet",
+      "intent": "tarifs",
+      "canonical": "C’est combien le centre de loisirs ?",
+      "sms": "c comb1 le centre ?",
+      "variants": [
+        "c comben le centre ??",
+        "le centre ca coute cb ?"
+      ]
+    },
+    {
+      "id": "centre_sms_confus",
+      "intent": "tarifs",
+      "canonical": "Quel est le coût pour deux enfants au centre ?",
+      "sms": "c comben pr 2 goss o centre ?",
+      "variants": [
+        "Tarif centre pour deux enfants ?",
+        "si jai 2 pti c cb ?"
+      ]
+    }
+  ]
+}
+

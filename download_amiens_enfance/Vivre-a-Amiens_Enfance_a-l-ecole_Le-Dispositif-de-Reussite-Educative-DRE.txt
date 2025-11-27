@@ -1,8 +1,0 @@
-
-URL: https://www.amiens.fr/Vivre-a-Amiens/Enfance/a-l-ecole/Le-Dispositif-de-Reussite-Educative-DRE
-
-Tables: []
-Display:none: []
-Aria-hidden: ['Ecoutez']
-Voir+: []
-PDFs: []

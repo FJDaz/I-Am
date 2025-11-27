@@ -18,6 +18,14 @@ from typing import Dict, Iterable, List, Optional
 import html2text
 from bs4 import BeautifulSoup
 
+# Import URLDiscoverer pour découverte généralisée
+try:
+    from tools.discover_urls import URLDiscoverer, fetch_page as fetch_page_discover
+except ImportError:
+    # Fallback si discover_urls n'est pas disponible
+    URLDiscoverer = None
+    fetch_page_discover = None
+
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "data" / "corpus_metadata.json"
 CONFIG_PATH = ROOT / "data" / "corpus_sources.json"
@@ -65,7 +73,15 @@ def slugify(text: str) -> str:
   return slug
 
 
-def discover_push_blocks(soup: BeautifulSoup, base_url: str) -> List[str]:
+def discover_push_blocks(soup: BeautifulSoup, base_url: str, discoverer: Optional[URLDiscoverer] = None) -> List[str]:
+  """
+  Découvre les URLs via push-blocks (H2).
+  Utilise URLDiscoverer si disponible, sinon fallback sur implémentation locale.
+  """
+  if discoverer is not None:
+    return discoverer.discover_push_blocks(soup, base_url)
+  
+  # Fallback : implémentation locale (compatibilité)
   urls = []
   blocks = soup.select(".push-block__inner h2")
   for block in blocks:
@@ -124,10 +140,22 @@ def parse_page(url: str, category: str) -> List[Segment]:
   return segments
 
 
-def rebuild_corpus() -> List[Dict[str, str]]:
+def rebuild_corpus(use_discoverer: bool = True) -> List[Dict[str, str]]:
+  """
+  Rebuild corpus from sources.
+  
+  Args:
+    use_discoverer: Si True, utilise URLDiscoverer pour découverte avancée
+  """
   sources = load_sources()
   seen_urls = set()
   all_segments: List[Segment] = []
+  
+  # Initialiser URLDiscoverer si disponible
+  discoverer = None
+  if use_discoverer and URLDiscoverer is not None:
+    discoverer = URLDiscoverer(respect_robots=True, delay=1.0)
+  
   for source in sources:
     base_url = source["url"]
     category = source.get("category", "general")
@@ -140,8 +168,12 @@ def rebuild_corpus() -> List[Dict[str, str]]:
     except CrawlError as exc:
       print(exc, file=sys.stderr)
       continue
+    
+    # Découvrir nouvelles URLs avec URLDiscoverer ou fallback
     soup = fetch_page(base_url)
-    for discovered in discover_push_blocks(soup, base_url):
+    discovered_urls = discover_push_blocks(soup, base_url, discoverer)
+    
+    for discovered in discovered_urls:
       if discovered in seen_urls:
         continue
       seen_urls.add(discovered)

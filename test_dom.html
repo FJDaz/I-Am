@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const HTML = `
+  <button id="test-toggle">Test</button>
+  <div id="test-div">Content</div>
+`;
+
+const wrapper = document.createElement("div");
+wrapper.innerHTML = HTML;
+document.body.appendChild(wrapper);
+
+console.log("Toggle via document.getElementById:", document.getElementById("test-toggle"));
+console.log("Toggle via wrapper.querySelector:", wrapper.querySelector("#test-toggle"));
+</script>
+</body>
+</html>

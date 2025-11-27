@@ -110,14 +110,15 @@ Travail sur l'amélioration du système RAG pour répondre aux 10 tests identifi
   - Vérifier chargement au démarrage
   - Tester injection conditionnelle
 
-#### 🔴 URGENT - Crash Serveur
-- [ ] **Corriger crash serveur après 2-3 requêtes**
-  - Investiguer gestion historique conversation
-  - Vérifier limites tokens API Claude
-  - Ajouter logs détaillés pour identifier erreur
-  - Limiter taille historique plus strictement
-  - Vérifier gestion erreurs dans `call_model()` et `rag_assistant_endpoint()`
-  - **Note** : Voir `NOTE_DEMAIN_CRASH_SERVEUR.md`
+#### ✅ Résolu - Crash Serveur
+- [x] **Corriger crash serveur après 2-3 requêtes** ✅ COMPLÉTÉ
+  - **Problème identifié** : Historique conversation trop volumineux (60 tours avec contenu complet)
+  - **Solution appliquée** :
+    - Limitation historique à 12 tours côté extension
+    - Truncation contenu à 500 caractères par tour
+    - Gestion d'erreurs améliorée dans `rag_assistant_endpoint()`
+    - Timeout Claude API réduit (60s → 30s)
+  - **Status** : Serveur stable maintenant
 
 ---
 
@@ -153,20 +154,35 @@ Travail sur l'amélioration du système RAG pour répondre aux 10 tests identifi
 1. ✅ `tools/extract_tarif_tables.py` - Extraction tableaux PDF (amélioré)
 2. ✅ `tools/fetch_osm_schools.py` - Récupération écoles OSM
 3. ✅ `tools/address_fetcher.py` - Système adresses dynamique
-4. ✅ `tools/complete_school_addresses.py` - Complétion adresses écoles (NOUVEAU)
-5. ⚠️ `tools/check_carte_api.py` - Vérification API (problème SSL)
-6. ✅ `tests/test_integration.py` - Script de test d'intégration (NOUVEAU)
+4. ✅ `tools/complete_school_addresses.py` - Complétion adresses écoles
+5. ✅ `tools/resume_contexte_manager.py` - Gestion automatique RESUME_CONTEXTE.md
+6. ✅ `tools/archive_old_docs.py` - Archivage automatique documentation
+7. ⚠️ `tools/check_carte_api.py` - Vérification API (problème SSL)
+8. ✅ `tests/test_integration.py` - Script de test d'intégration
 
 ---
 
 ## 📝 Fichiers de Documentation
 
+### Documentation Technique
+- ✅ `docs/references/methode-meta-skills.md` - Méthode méta pour créer des skills
+- ✅ `docs/references/prompt-generateur-skills.md` - Prompt pour générer des skills
+- ✅ `docs/references/segments-rag.md` - Explication des segments RAG
+- ✅ `docs/references/optimisation-latence.md` - Optimisations de performance
+
+### Guides et Tutos
+- ✅ `docs/tutos/deploiement-mvp.md` - Guide déploiement Railway
+- ✅ `docs/tutos/utiliser-extension-railway.md` - Guide utilisation extension avec Railway
+- ✅ `docs/tutos/fixer-auto-deploy-railway.md` - Fix déploiement automatique
+- ✅ `docs/tutos/retirer-secret-git.md` - Retirer secrets de Git
+- ✅ `docs/tutos/securite-url-github.md` - Sécurité URL GitHub
+
+### Documentation Tests (ancienne structure)
 - ✅ `tests/docs/PROMPT_ACTION.md` - Plan d'action initial
 - ✅ `tests/docs/RETOUR_TOUR_SITE.md` - Analyse commentaires utilisateur
 - ✅ `tests/docs/RESULTATS_IMPLÉMENTATION.md` - Résultats détaillés
 - ✅ `tests/docs/BILAN_IMPLÉMENTATION.md` - Bilan complet
 - ✅ `tests/docs/RESUME_CONTEXTE.md` - Ce document
-- ✅ `tests/docs/BILAN_SESSION.md` - Bilan de la session actuelle (NOUVEAU)
 
 ---
 
@@ -190,19 +206,39 @@ Travail sur l'amélioration du système RAG pour répondre aux 10 tests identifi
 
 ## 🔄 Dernières Mises à Jour
 
+**2025-11-18** :
+- ✅ **Optimisation déploiement Railway** :
+  - Retrait `sentence-transformers` et `torch` de `requirements.txt` (allègement Docker : 5 Go → 200 Mo)
+  - Build Railway réussi (103 secondes, vs timeout avant)
+  - Recherche sémantique désactivée (Whoosh BM25 seul, suffisant pour MVP)
+  - Code adapté pour fonctionner sans embeddings (gestion gracieuse)
+- ✅ **Extension Chrome améliorée** :
+  - Logo IAM ajouté dans le header (`statics/img/IAM_logo.png`)
+  - CSS h1 amélioré (font-size 1.7rem, couleur cue, Open Sans ExtraBold)
+  - Font-weight optimisé (seul header h1 et submit button en bold)
+  - Import Google Fonts ajouté pour Open Sans weight 800
+- ✅ **Méthode méta skills créée** :
+  - `docs/references/methode-meta-skills.md` : Structure complète des skills
+  - `docs/references/prompt-generateur-skills.md` : Prompt pour générer des skills
+  - Section ajoutée : Fonctionnement résumé contexte systématique + architecture documentation
+  - Précision : **Cursor** (l'IA) invoque automatiquement les skills
+- ✅ **Architecture documentation** :
+  - Structure `docs/` créée dans bergsonAndFriends (même architecture que I Amiens)
+  - 23 fichiers .md classés dans bergsonAndFriends (notes, tutos, supports, references)
+  - README mis à jour dans les deux projets
+- ✅ **Documentation déploiement** :
+  - `docs/tutos/utiliser-extension-railway.md` : Guide utilisation extension avec Railway
+  - `docs/tutos/fixer-auto-deploy-railway.md` : Guide fix déploiement automatique
+
 **2025-11-17 23:30** :
 - ✅ Prompt injection + post-processing pour questions de suivi (follow-up)
   - Instructions ajoutées dans `ASSISTANT_SYSTEM_PROMPT` pour générer questions utilisateur
   - Fonction `normalize_followup_question()` créée pour post-processing
   - Transformations : "Je quel est votre..." → "Quel est mon quotient familial ?"
-- 🔴 **PROBLÈME CRITIQUE** : Serveur crash après 2-3 requêtes
-  - Hypothèse : Gestion historique conversation
-  - Note créée : `NOTE_DEMAIN_CRASH_SERVEUR.md`
-  - À investiguer demain
-
-**2025-11-17 21:22** :
-- Tâches complétées : Test de mise à jour
-- Nouveaux modules : resume_contexte_manager.py
+- ✅ **Crash serveur résolu** :
+  - Problème : Historique conversation trop volumineux (60 tours → 12 tours)
+  - Solution : Limitation historique côté extension + truncation contenu
+  - Serveur stable maintenant
 
 ## ⚠️ Points d'Attention
 
@@ -210,14 +246,14 @@ Travail sur l'amélioration du système RAG pour répondre aux 10 tests identifi
 2. **API carte** : Problème SSL non résolu
 3. **Endpoint périscolaire** : Mystère, nécessite investigation manuelle
 4. **Format tableaux** : Peut être amélioré pour meilleure lisibilité
-5. **🔴 CRITIQUE - Crash Serveur** : Le serveur crash après 2-3 requêtes successives
-   - **Hypothèse** : Problème lié à la gestion de l'historique de conversation
-   - **Note détaillée** : Voir `NOTE_DEMAIN_CRASH_SERVEUR.md`
-   - **À investiguer** :
-     - Gestion de `conversation[-12:]` dans `rag_assistant_endpoint()`
-     - Limite de tokens dans les appels API Claude
-     - Accumulation mémoire avec l'historique
-     - Erreurs non capturées dans `call_model()` ou `rag_assistant_endpoint()`
+5. ✅ **Crash Serveur** : RÉSOLU
+   - **Problème** : Historique conversation trop volumineux
+   - **Solution** : Limitation historique (12 tours) + truncation contenu (500 chars)
+   - **Status** : Serveur stable
+6. **Déploiement Railway** : ✅ Fonctionnel
+   - Build réussi (103 secondes)
+   - Image Docker allégée (200 Mo vs 5 Go)
+   - Recherche Whoosh uniquement (suffisant pour MVP)
 
 ---
 

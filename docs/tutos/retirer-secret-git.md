@@ -17,6 +17,7 @@ git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 
 # Force push (⚠️ réécrit l'historique)
+
 git push --force-with-lease origin main
 ```
 

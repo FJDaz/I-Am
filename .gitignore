@@ -44,3 +44,10 @@ data/raw/**/*
 # Tests
 test_results_*.json
 test_results_*.csv
+
+# Environnements virtuels Python avec # dans le nom
+#/
+"#"*
+
+# Garbage folder
+garbage/

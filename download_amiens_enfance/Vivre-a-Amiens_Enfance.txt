@@ -1,8 +1,0 @@
-
-URL: https://www.amiens.fr/Vivre-a-Amiens/Enfance
-
-Tables: ["Pour tout savoir sur l'accueil inclusif de tous les enfants en situation de handicap ou à besoins spécifiques\n>> cliquez ici <<"]
-Display:none: []
-Aria-hidden: ['Ecoutez']
-Voir+: []
-PDFs: []
