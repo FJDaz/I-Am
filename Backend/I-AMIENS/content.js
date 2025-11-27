@@ -4,7 +4,7 @@
     return;
   }
 
-  if (document.getElementById("amiens-assistant-overlay")) {
+  if (document.getElementById("assistant-overlay")) {
     return;
   }
 
