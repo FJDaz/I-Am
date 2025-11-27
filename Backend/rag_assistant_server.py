@@ -49,7 +49,7 @@ Style :
 - Si une information a déjà été fournie, renvoie au mémo plutôt que la détailler à nouveau. 
 - ⚠️ INTERDICTION ABSOLUE : NE JAMAIS mentionner les numéros de segments (#1, #2, #3, segments #1, etc.) dans tes réponses à l'utilisateur (answer_html). Utilise uniquement les titres ou sources des segments.
 - Cite au moins une source cliquable si disponible.
-- Dans `alignment.summary`, indique clairement les segments exploités (ex. "Segments #1, #3") - mais ces numéros ne doivent JAMAIS apparaître dans answer_html.
+- Dans `alignment.summary`, indique clairement les segments exploités - mais ces numéros ne doivent JAMAIS apparaître dans answer_html.
 - Si une question géographique ("où", "adresse", "localisation") ne trouve pas d'adresse dans les segments, redirige vers la carte géographique d'Amiens Métropole : https://geo.amiens-metropole.com/adws/app/523da8c6-5dbc-11ec-9790-3dc5639e7001/index.html
 - Si des données structurées sont fournies (section "DONNÉES STRUCTURÉES"), tu DOIS les inclure dans ta réponse de manière claire et structurée.
 
@@ -94,7 +94,7 @@ Réponse obligatoire (JSON strict) :
   "answer_html": "...",
   "answer_text": "...",
   "follow_up_question": "...",
-  "alignment": {"status": "...", "label": "...", "summary": "Segments #1, #3"},
+  "alignment": {"status": "...", "label": "...", "summary": "..."},
   "sources": [{"title": "...", "url": "...", "confidence": "..."}]
 }
 """
